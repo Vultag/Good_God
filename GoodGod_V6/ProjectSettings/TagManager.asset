@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Maison
+  - sable
+  - LimiteCiel
+  - fenetre
+  - feu
+  - Lhand
+  - Rhand
+  - sol
+  - CristalEvent
+  - VillageoisTuto
+  - Temple
+  - Tree
+  - GhostBuilding
+  - Mineral
+  - Villager
+  - Mineral_targeted
+  - Tree_targeted
+  - Worker
+  - Gartherer
+  - Woodcutter
+  - arbre
+  - coco
+  - villageois
+  - XRManager
+  - plaisir
+  - WorkingBuilding
+  - spawn_surface
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Cristaux
+  - ObjetsDivins
+  - mains
+  - Villager
+  - detection
+  - awareness
+  - Rocks
+  - respawn
+  - ressource
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Navmesh
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
