@@ -41169,7 +41169,7 @@ GameObject:
   - component: {fileID: 924055161}
   - component: {fileID: 924055160}
   m_Layer: 0
-  m_Name: Nuage4
+  m_Name: Nuage4Bwah
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41183,7 +41183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4106901789429146668}
   m_LocalRotation: {x: -0, y: -0.6296595, z: -0, w: 0.77687126}
-  m_LocalPosition: {x: 63.428238, y: 35.64, z: 5.4787064}
+  m_LocalPosition: {x: 70.04, y: 35.64, z: 4.08}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -41374,7 +41374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4106901789717402755}
   m_LocalRotation: {x: -0, y: -0.6296595, z: -0, w: 0.77687126}
-  m_LocalPosition: {x: 35.728237, y: 29.039377, z: -50.851295}
+  m_LocalPosition: {x: 37.56, y: 29.039377, z: -51.24}
   m_LocalScale: {x: 0.9128848, y: 0.9128847, z: 0.9128848}
   m_ConstrainProportionsScale: 1
   m_Children:
