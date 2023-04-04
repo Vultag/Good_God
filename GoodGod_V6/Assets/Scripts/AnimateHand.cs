@@ -170,6 +170,13 @@ public class AnimateHand : MonoBehaviour
 
         Rgrab = RgripAnimationAction.action.ReadValue<float>();
         RhandAnimator.SetFloat("Grip", Rgrab);
+
+        if (Rtrigger > 0.9f && Rgrab > 0.9f)
+        {
+            //poing gauche fermé
+            RPoingFerme = true;
+        }
+
         /*
         if (Events_manager.EventInProgress == false)
         {
@@ -188,7 +195,7 @@ public class AnimateHand : MonoBehaviour
 
         if (Rtrigger > 0.9f && Rgrab > 0.9f)
         {
-            //poing gauche fermé
+            poing gauche fermé
             RPoingFerme = true;
         }
         */
