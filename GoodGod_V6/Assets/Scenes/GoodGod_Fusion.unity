@@ -41242,7 +41242,7 @@ GameObject:
   - component: {fileID: 924055161}
   - component: {fileID: 924055160}
   m_Layer: 0
-  m_Name: Nuage4Bwah
+  m_Name: Nuage4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

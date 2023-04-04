@@ -182,21 +182,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 295262403932570403, guid: ff932cdf99451724d9d35402a41c1661,
-        type: 3}
-      propertyPath: m_ThrowOnDetach
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 295262403932570403, guid: ff932cdf99451724d9d35402a41c1661,
-        type: 3}
-      propertyPath: m_ThrowVelocityScale
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 295262403932570403, guid: ff932cdf99451724d9d35402a41c1661,
-        type: 3}
-      propertyPath: m_ThrowAngularVelocityScale
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 1030460468721464742, guid: ff932cdf99451724d9d35402a41c1661,
         type: 3}
       propertyPath: m_Size.x
@@ -226,21 +211,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: -1.4376078
-      objectReference: {fileID: 0}
-    - target: {fileID: 1030460468721464742, guid: ff932cdf99451724d9d35402a41c1661,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1030460468721464760, guid: ff932cdf99451724d9d35402a41c1661,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1030460468721464760, guid: ff932cdf99451724d9d35402a41c1661,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1030460468721464761, guid: ff932cdf99451724d9d35402a41c1661,
         type: 3}
