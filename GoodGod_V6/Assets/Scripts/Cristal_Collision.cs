@@ -11,6 +11,7 @@ public class Cristal_Collision : MonoBehaviour
     private GameObject temple;
     public AudioSource BoomAudio;
     // Start is called before the first frame update
+    [SerializeField] private GameObject blood_prefab;
 
     private bool has_hit = false;
 
@@ -31,6 +32,21 @@ public class Cristal_Collision : MonoBehaviour
 
         //Debug.Log(collision.collider.gameObject.name, gameObject);
 
+        Debug.Log(collision.collider.transform.parent.gameObject);
+
+
+        if (collision.collider.tag == "Villager")
+        {
+
+            GameObject blood = Instantiate(blood_prefab, new Vector3(this.transform.position.x, -5.8500f, this.transform.position.z), Quaternion.identity, TempleScript.instance.transform.parent);
+            Destroy(blood, 16f);
+
+            collision.collider.GetComponent<VillagerScript>().mesh.SetActive(false);
+            collision.collider.GetComponent<VillagerScript>().die();
+
+        }
+
+
         if (has_hit == false)
         {
 
@@ -40,47 +56,67 @@ public class Cristal_Collision : MonoBehaviour
             if (collision.collider.tag == "Maison")
             {
 
-                if (collision.collider.transform.parent.parent.GetComponent<HouseScript>().building_row == 0)
+                if (collision.collider.transform.GetComponent<HouseScript>() == null)
                 {
-                    BoomAudio.Play();
-                    GameObject clone = Instantiate(Debris, temple.GetComponent<TempleScript>().building_row_0[collision.collider.transform.parent.parent.GetComponent<HouseScript>().building_placement].position, Quaternion.Euler(0, 180 * Random.Range(0, 2), 0), temple.GetComponent<TempleScript>().building_row_0[collision.collider.transform.parent.parent.GetComponent<HouseScript>().building_placement]);
+
+                    if (collision.collider.transform.parent.parent.GetComponent<HouseScript>().building_row == 0)
+                    {
+                        BoomAudio.Play();
+                        GameObject clone = Instantiate(Debris, temple.GetComponent<TempleScript>().building_row_0[collision.collider.transform.parent.parent.GetComponent<HouseScript>().building_placement].position, Quaternion.Euler(0, 180 * Random.Range(0, 2), 0), temple.GetComponent<TempleScript>().building_row_0[collision.collider.transform.parent.parent.GetComponent<HouseScript>().building_placement]);
+                    }
+
+                    if (collision.collider.transform.parent.parent.GetComponent<HouseScript>().building_row == 1)
+                    {
+                        BoomAudio.Play();
+                        GameObject clone = Instantiate(Debris, temple.GetComponent<TempleScript>().building_row_1[collision.collider.transform.parent.parent.GetComponent<HouseScript>().building_placement].position, Quaternion.Euler(0, 180 * Random.Range(0, 2), 0), temple.GetComponent<TempleScript>().building_row_1[collision.collider.transform.parent.parent.GetComponent<HouseScript>().building_placement]);
+                    }
+
+                    collision.collider.transform.parent.parent.GetComponent<HouseScript>()._house_destroyed();
                 }
-
-                if (collision.collider.transform.parent.parent.GetComponent<HouseScript>().building_row == 1)
-                {
-                    BoomAudio.Play();
-                    GameObject clone = Instantiate(Debris, temple.GetComponent<TempleScript>().building_row_1[collision.collider.transform.parent.parent.GetComponent<HouseScript>().building_placement].position, Quaternion.Euler(0, 180 * Random.Range(0, 2), 0), temple.GetComponent<TempleScript>().building_row_1[collision.collider.transform.parent.parent.GetComponent<HouseScript>().building_placement]);
-                }
-
-
-
-                collision.collider.transform.parent.parent.GetComponent<HouseScript>()._house_destroyed();
 
             }
             if (collision.collider.tag == "GhostBuilding")
             {
 
-                if (collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>().raising_height < 6)
-                {
-                    if (collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>().building_row == 0)
-                    {
-                        BoomAudio.Play();
-                        GameObject clone = Instantiate(Debris, temple.GetComponent<TempleScript>().building_row_0[collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>().building_placement].position, Quaternion.Euler(0, 180 * Random.Range(0, 2), 0), temple.GetComponent<TempleScript>().building_row_0[collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>().building_placement]);
-                    }
 
-                    if (collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>().building_row == 1)
+                if (collision.collider.transform.GetComponent<GhostHouseScript>() == null)
+                {
+
+                    if (collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>().raising_height < 6)
+                    {
+                        if (collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>().building_row == 0)
+                        {
+                            BoomAudio.Play();
+                            GameObject clone = Instantiate(Debris, temple.GetComponent<TempleScript>().building_row_0[collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>().building_placement].position, Quaternion.Euler(0, 180 * Random.Range(0, 2), 0), temple.GetComponent<TempleScript>().building_row_0[collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>().building_placement]);
+                        }
+
+                        if (collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>().building_row == 1)
+                        {
+                            BoomAudio.Play();
+                            GameObject clone = Instantiate(Debris, temple.GetComponent<TempleScript>().building_row_1[collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>().building_placement].position, Quaternion.Euler(0, 180 * Random.Range(0, 2), 0), temple.GetComponent<TempleScript>().building_row_1[collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>().building_placement]);
+                        }
+                    }
+                    else
                     {
                         BoomAudio.Play();
-                        GameObject clone = Instantiate(Debris, temple.GetComponent<TempleScript>().building_row_1[collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>().building_placement].position, Quaternion.Euler(0, 180 * Random.Range(0, 2), 0), temple.GetComponent<TempleScript>().building_row_1[collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>().building_placement]);
+                        GameObject clone = Instantiate(Debris, temple.GetComponent<TempleScript>().disco_spawn.position, Quaternion.Euler(0, 180 * Random.Range(0, 2), 0), TempleScript.instance.transform.parent);
                     }
+                
+                    collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>()._ghosthouse_destroyed();
+
                 }
                 else
                 {
-                    BoomAudio.Play();
-                    GameObject clone = Instantiate(Debris, temple.GetComponent<TempleScript>().disco_spawn.position, Quaternion.Euler(0, 180 * Random.Range(0, 2), 0), TempleScript.instance.transform.parent);
+                    if (collision.collider.GetComponent<GhostHouseScript>().raising_height < 6)
+                    {
+                        BoomAudio.Play();
+                        GameObject clone = Instantiate(Debris, temple.GetComponent<TempleScript>().disco_spawn.position, Quaternion.Euler(0, 180 * Random.Range(0, 2), 0), TempleScript.instance.transform.parent);
+                        collision.collider.GetComponent<GhostHouseScript>()._ghosthouse_destroyed();
+                    }
                 }
 
-                collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>()._ghosthouse_destroyed();
+
+
             }
             if (collision.collider.tag == "plaisir")
             {
@@ -118,6 +154,10 @@ public class Cristal_Collision : MonoBehaviour
             Destroy(this.gameObject);
            
         }
+
+
+
+
     }
 
     

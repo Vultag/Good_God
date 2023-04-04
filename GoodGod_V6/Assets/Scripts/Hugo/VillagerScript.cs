@@ -248,7 +248,7 @@ public class VillagerScript : MonoBehaviour
                     else
                     {
                         //if(TempleScript.instance.disco_builed)
-                        Debug.Log(TempleScript.instance.disco_builed);
+                        //Debug.Log(TempleScript.instance.disco_builed);
                             StartCoroutine(dancing());
                     }
 

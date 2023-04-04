@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 2605581614270907975}
   m_Layer: 30
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: GhostBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 3035984578448396728}
   m_Layer: 30
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: GhostBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 6449836759827387944}
   m_Layer: 30
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: GhostBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

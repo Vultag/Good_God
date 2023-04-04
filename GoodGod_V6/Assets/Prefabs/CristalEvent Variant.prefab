@@ -369,6 +369,8 @@ MonoBehaviour:
   PosImpact: {x: 0, y: 0, z: 0}
   impactScript: {fileID: 0}
   BoomAudio: {fileID: 245303492541533627}
+  blood_prefab: {fileID: 4804437626855143110, guid: 09564e2fc5a9b5748b485e33b05955a9,
+    type: 3}
 --- !u!82 &245303492541533627
 AudioSource:
   m_ObjectHideFlags: 0
