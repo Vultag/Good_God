@@ -37,7 +37,7 @@ public class Cristal_Collision : MonoBehaviour
             has_hit = true;
 
 
-            if (collision.collider.transform.parent.parent.tag == "Maison")
+            if (collision.collider.tag == "Maison")
             {
 
                 if (collision.collider.transform.parent.parent.GetComponent<HouseScript>().building_row == 0)
@@ -82,7 +82,7 @@ public class Cristal_Collision : MonoBehaviour
 
                 collision.collider.transform.parent.parent.GetComponent<GhostHouseScript>()._ghosthouse_destroyed();
             }
-            if (collision.collider.transform.parent.parent.tag == "plaisir")
+            if (collision.collider.tag == "plaisir")
             {
                 BoomAudio.Play();
                 GameObject clone = Instantiate(Debris, temple.GetComponent<TempleScript>().disco_spawn.position, Quaternion.Euler(0, 180 * Random.Range(0, 2), 0), TempleScript.instance.GetComponent<TempleScript>().disco_spawn);

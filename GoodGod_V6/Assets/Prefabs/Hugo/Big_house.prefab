@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 706955306}
   m_Layer: 30
   m_Name: Cube (8)
-  m_TagString: Untagged
+  m_TagString: Maison
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 959469114}
   m_Layer: 30
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: Maison
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 1070798010}
   m_Layer: 30
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: Maison
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -662,7 +662,7 @@ GameObject:
   - component: {fileID: 1947460510}
   m_Layer: 30
   m_Name: Cube (11)
-  m_TagString: Untagged
+  m_TagString: Maison
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1017,7 +1017,7 @@ GameObject:
   - component: {fileID: 1923895930}
   m_Layer: 30
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Maison
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1138,7 +1138,7 @@ GameObject:
   - component: {fileID: 1290043979665077753}
   m_Layer: 30
   m_Name: navmesh_collider
-  m_TagString: Untagged
+  m_TagString: Maison
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

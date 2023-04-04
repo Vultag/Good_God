@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 660523595}
   m_Layer: 30
   m_Name: Cube (13)
-  m_TagString: Maison
+  m_TagString: plaisir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 1501452915}
   m_Layer: 30
   m_Name: Cube (14)
-  m_TagString: Maison
+  m_TagString: plaisir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 1869510538}
   m_Layer: 30
   m_Name: Cube (12)
-  m_TagString: Maison
+  m_TagString: plaisir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 117361454}
   m_Layer: 30
   m_Name: Cube (6)
-  m_TagString: Untagged
+  m_TagString: plaisir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 1172254772126288127}
   m_Layer: 30
   m_Name: Cube (3)
-  m_TagString: Maison
+  m_TagString: plaisir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 1172254772798179717}
   m_Layer: 30
   m_Name: Cube (2)
-  m_TagString: Maison
+  m_TagString: plaisir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 1172254772921163862}
   m_Layer: 30
   m_Name: Cube
-  m_TagString: Maison
+  m_TagString: plaisir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -769,7 +769,7 @@ GameObject:
   - component: {fileID: 1172254773059275506}
   m_Layer: 30
   m_Name: Cube (1)
-  m_TagString: Maison
+  m_TagString: plaisir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -871,7 +871,7 @@ GameObject:
   - component: {fileID: 1172254773362866596}
   m_Layer: 30
   m_Name: navmesh_collider
-  m_TagString: Untagged
+  m_TagString: Maison
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -919,7 +919,7 @@ GameObject:
   - component: {fileID: 1172254773412393429}
   m_Layer: 30
   m_Name: Cube (5)
-  m_TagString: Maison
+  m_TagString: plaisir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1025,7 +1025,7 @@ GameObject:
   - component: {fileID: 7594802389836730406}
   m_Layer: 30
   m_Name: Cube (8)
-  m_TagString: Untagged
+  m_TagString: plaisir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1318,7 +1318,7 @@ GameObject:
   - component: {fileID: 4001393805318537485}
   m_Layer: 30
   m_Name: Cube (11)
-  m_TagString: Untagged
+  m_TagString: plaisir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1443,7 +1443,7 @@ GameObject:
   - component: {fileID: 1557953196034661395}
   m_Layer: 30
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: plaisir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1734,7 +1734,7 @@ GameObject:
   - component: {fileID: 808502477231899657}
   m_Layer: 30
   m_Name: Cube (9)
-  m_TagString: Untagged
+  m_TagString: plaisir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1859,7 +1859,7 @@ GameObject:
   - component: {fileID: 6995808581690579004}
   m_Layer: 30
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: plaisir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

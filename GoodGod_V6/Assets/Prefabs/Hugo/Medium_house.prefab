@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 342484257}
   m_Layer: 30
   m_Name: Cube (7)
-  m_TagString: Untagged
+  m_TagString: Maison
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1253,7 +1253,7 @@ GameObject:
   - component: {fileID: 5935829678389159813}
   m_Layer: 30
   m_Name: navmesh_collider
-  m_TagString: Untagged
+  m_TagString: Maison
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
