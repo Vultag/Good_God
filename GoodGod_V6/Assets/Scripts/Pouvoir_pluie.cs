@@ -58,13 +58,7 @@ public class Pouvoir_pluie : MonoBehaviour
         StopCoroutine(Resapwn_cycle());
         StartCoroutine(ExitNuage());
     }
-    public IEnumerator Effects()
-    {
-        while (VieNuage < 150 && Attrape == true)
-        {
-
-        }
-    }
+    
     public IEnumerator ExitNuage()
     {
 

@@ -11,7 +11,7 @@ public class Tutoriel : MonoBehaviour
 {
     public AudioClip[] _audioClips;
     public AudioSource TelAudio,BouleBAudio, BouleMAudio;
-    public GameObject bouleB, bouleM, nuage, sablier, villageois, palmier, IPad, Ecran, Generique, Bureau, GeneriqueEcran;
+    public GameObject bouleB, bouleM, nuage, sablier, villageois, palmier, IPad, Ecran, Generique, Bureau, GeneriqueEcran, Tel;
     public GameObject[] plaisir, Villagers;
     public float timetuto, tuto, cas, fin;
     public Vector3 VNuage, VArbre, VVillageois, VSablier, VPlaisir;
@@ -37,7 +37,7 @@ public class Tutoriel : MonoBehaviour
     {
 
         TelAudio.PlayOneShot(_audioClips[44]);
-
+        Tel.gameObject.SetActive(true);
 
     }
 
@@ -94,6 +94,31 @@ public class Tutoriel : MonoBehaviour
         }
        
     }
+    public void RaccrocheTelephone()
+    {
+        //FIN TUTO
+        TelAudio.Stop();
+        if (fin == 0)
+        {
+            tuto = 6;
+            // Faire disparaitre après quelques secondes
+            StopAllCoroutines();
+            StartCoroutine(DisparitionTel(0));
+            
+        }
+
+    }
+    public IEnumerator DisparitionTel(float time)
+    {
+        while (time < 10)
+        {
+            Debug.Log("Temps :" + time);
+            time++;
+            yield return new WaitForSeconds(1);
+        }
+        Tel.gameObject.SetActive(false);
+    }
+
     void NuagePos()
     {
         VNuage = nuage.transform.position;
@@ -565,6 +590,7 @@ public class Tutoriel : MonoBehaviour
 
         TempleScript.instance.transform.parent.gameObject.SetActive(false);
         //Time.timeScale = 0;
+        Tel.gameObject.SetActive(true);
         TelAudio.PlayOneShot(_audioClips[44]); //a remplacer par la sonnerie       
     }
 

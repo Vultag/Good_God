@@ -31,6 +31,7 @@ TagManager:
   - plaisir
   - WorkingBuilding
   - spawn_surface
+  - danceur
   layers:
   - Default
   - TransparentFX
@@ -63,7 +64,7 @@ TagManager:
   - 
   - 
   - Navmesh
-  - 
+  - Camera
   m_SortingLayers:
   - name: Default
     uniqueID: 0
