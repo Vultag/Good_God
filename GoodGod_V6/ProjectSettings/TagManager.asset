@@ -64,7 +64,7 @@ TagManager:
   - 
   - 
   - Navmesh
-  - Camera
+  - Post Processing
   m_SortingLayers:
   - name: Default
     uniqueID: 0
