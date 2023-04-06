@@ -32,8 +32,9 @@ public class AnimateHand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        temple = TempleScript.instance.gameObject;
+        
+        if(TempleScript.instance != null)
+            temple = TempleScript.instance.gameObject;
 
         Rtrigger = Mathf.Clamp(Rtrigger, 0, 1);
         Ltrigger = Mathf.Clamp(Ltrigger, 0, 1);
@@ -60,8 +61,12 @@ public class AnimateHand : MonoBehaviour
         //inputs_action.XRILeftHandInteraction.SelectValue.started += L_Select_started;
         //inputs_action.XRILeftHandInteraction.SelectValue.canceled += L_Select_canceled;
 
-        inputs_action.XRBUTTONS.X.performed += Lance_eclair_performed_L;
-        inputs_action.XRBUTTONS.A.performed += Lance_eclair_performed_R;
+
+        ///MARCHE PAS POUR XR INTERRACT / REMETTRE POUR LE BUILD
+        inputs_action.XRILeftHandInteraction.Activate.started += Lance_eclair_performed_L;
+        inputs_action.XRIRightHandInteraction.Activate.started += Lance_eclair_performed_R;
+        ///inputs_action.XRBUTTONS.X.performed += Lance_eclair_performed_L;
+        ///inputs_action.XRBUTTONS.A.performed += Lance_eclair_performed_R;
     }
 
     // Update is called once per frame
@@ -96,8 +101,8 @@ public class AnimateHand : MonoBehaviour
     {
 
         Rgrab = RgripAnimationAction.action.ReadValue<float>();
-
-        if (Events_manager.EventInProgress == false)
+        
+        if (Events_manager.EventInProgress == false && TempleScript.instance != null)
         {
             if (Rgrab < 0.2f)
             {
@@ -114,14 +119,16 @@ public class AnimateHand : MonoBehaviour
     private void R_Trigger_deactivate(CallbackContext obj)
     {
 
-        temple.GetComponent<YogaScript>().activate_yoga_hand(0, false);
+        if (TempleScript.instance != null)
+            temple.GetComponent<YogaScript>().activate_yoga_hand(0, false);
     }
 
 
     private void L_Trigger_deactivate(CallbackContext obj)
     {
 
-        temple.GetComponent<YogaScript>().activate_yoga_hand(1, false);
+        if (TempleScript.instance != null)
+            temple.GetComponent<YogaScript>().activate_yoga_hand(1, false);
     }
 
     private void L_Trigger_activate(CallbackContext obj)
@@ -129,7 +136,7 @@ public class AnimateHand : MonoBehaviour
 
         Lgrab = LgripAnimationAction.action.ReadValue<float>();
 
-        if (Events_manager.EventInProgress == false)
+        if (Events_manager.EventInProgress == false && TempleScript.instance != null)
         {
             if (Lgrab < 0.2f)
             {
