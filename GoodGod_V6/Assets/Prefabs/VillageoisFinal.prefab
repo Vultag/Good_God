@@ -404,7 +404,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: d0a0e5b10a09f114c8e921938c8d92b1, type: 2}
-  - {fileID: 2100000, guid: 7eb910eb542413b4e955b26c1d89220f, type: 2}
+  - {fileID: 2100000, guid: 920dcea5534204b4e8d6d27164daeec1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -545,6 +545,7 @@ MonoBehaviour:
   Mec: {fileID: 5476019115991613871}
   Villageois: {fileID: 5526954692738993818}
   rb: {fileID: 0}
+  VillagerScript: {fileID: 0}
 --- !u!54 &4425397957592304791
 Rigidbody:
   m_ObjectHideFlags: 0

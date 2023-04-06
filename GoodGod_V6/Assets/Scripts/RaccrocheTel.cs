@@ -15,7 +15,7 @@ public class RaccrocheTel : MonoBehaviour
     //Si le joueur a décroché le téléphone et qu'il le remet sur le socle alors il raccroche
     private void OnTriggerEnter(Collider other)
     {
-        if (other == SocleTel) if (Tuto.tuto > 0 && TelDeccroche == true) Tuto.RaccrocheTelephone();
+        if (other == SocleTel) if (Tuto.tuto > 0 && TelDeccroche == true && Tuto.fin == 0) Tuto.RaccrocheTelephone();
     }
     private void OnTriggerExit(Collider other)
     {
