@@ -570,7 +570,7 @@ public class Tutoriel : MonoBehaviour
         IPad.gameObject.SetActive(true);
         //menu qui s'affiche
         if (fin == 1 | fin == 3) Ecran.GetComponent<MeshRenderer>().material = Defaite;
-        if (fin == 2) IPad.GetComponent<MeshRenderer>().material = Victoire;
+        if (fin == 2) Ecran.GetComponent<MeshRenderer>().material = Victoire;
         while (TimeMenu <5)
         {
             TimeMenu++;
