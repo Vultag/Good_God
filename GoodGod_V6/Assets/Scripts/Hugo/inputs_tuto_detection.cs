@@ -4,23 +4,34 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 
-public class AnimateHand : MonoBehaviour
+
+public class inputs_tuto_detection : MonoBehaviour
 {
+
+
+    [SerializeField] GameObject control_tuto_gb;
 
     XRIDefaultInputActions inputs_action;
 
-    public InputActionProperty RpinchAnimationAction;
-    public InputActionProperty RgripAnimationAction;
-    public InputActionProperty LpinchAnimationAction;
-    public InputActionProperty LgripAnimationAction;
-    public Animator RhandAnimator, LhandAnimator;
-    public float Ltrigger, Lgrab, Rtrigger, Rgrab;
-    public bool eclair;
-    public Raycast_eclair RayEclairR, RayEclairL;
-    public InputActionProperty buttonB;
-    public static bool LPoingFerme, RPoingFerme;
-    private GameObject temple;
-    public AudioSource EclairTir;
+    [SerializeField] GameObject move_test_gb;
+    [SerializeField] GameObject meditate_test_gb;
+    [SerializeField] GameObject turn_test_gb;
+    [SerializeField] GameObject grab_test_gb;
+    [SerializeField] GameObject shoot_test_gb;
+    [SerializeField] GameObject pause_test_gb;
+
+
+    private float Ltrigger, Lgrab, Rtrigger, Rgrab;
+
+    private static bool LPoingFerme, RPoingFerme;
+
+
+    [SerializeField] InputActionProperty RpinchAnimationAction;
+    [SerializeField] InputActionProperty RgripAnimationAction;
+    [SerializeField] InputActionProperty LpinchAnimationAction;
+    [SerializeField] InputActionProperty LgripAnimationAction;
+    //[SerializeField] InputActionProperty button_Y;
+    //[SerializeField] InputActionProperty button_B;
 
     private void OnEnable()
     {
@@ -29,12 +40,9 @@ public class AnimateHand : MonoBehaviour
 
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        
-        if(TempleScript.instance != null)
-            temple = TempleScript.instance.gameObject;
+
 
         Rtrigger = Mathf.Clamp(Rtrigger, 0, 1);
         Ltrigger = Mathf.Clamp(Ltrigger, 0, 1);
@@ -42,6 +50,16 @@ public class AnimateHand : MonoBehaviour
         Rgrab = Mathf.Clamp(Rgrab, 0, 1);
 
         inputs_action.Enable();
+
+
+        inputs_action.XRBUTTONS.Y.started += Y_activate;
+
+        inputs_action.XRBUTTONS.B.started += B_activate;
+
+
+        inputs_action.XRBUTTONS.MENU.started += menu_start;
+
+        inputs_action.XRIRightHandLocomotion.Move.performed += R_stick_perform;
 
         inputs_action.XRIRightHandInteraction.Activate.started += R_Trigger_activate;
         inputs_action.XRIRightHandInteraction.Activate.canceled += R_Trigger_deactivate;
@@ -61,50 +79,46 @@ public class AnimateHand : MonoBehaviour
         //inputs_action.XRILeftHandInteraction.SelectValue.started += L_Select_started;
         //inputs_action.XRILeftHandInteraction.SelectValue.canceled += L_Select_canceled;
 
-
         inputs_action.XRBUTTONS.X.performed += Lance_eclair_performed_L;
         inputs_action.XRBUTTONS.A.performed += Lance_eclair_performed_R;
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    private void Y_activate(CallbackContext obj)
     {
- 
-     
-      
+        tuto_input_check("move");
 
     }
-    /*
-    private void R_Select_started(CallbackContext obj)
+    private void B_activate(CallbackContext obj)
     {
 
+        //Debug.Log("move");
+        tuto_input_check("move");
     }
-    private void L_Select_started(CallbackContext obj)
+    private void menu_start(CallbackContext obj)
     {
 
-    }
-    private void R_Select_canceled(CallbackContext obj)
-    {
 
     }
-    private void L_Select_canceled(CallbackContext obj)
+    private void R_stick_perform(CallbackContext obj)
     {
 
+
     }
-    */
 
 
     private void R_Trigger_activate(CallbackContext obj)
     {
 
         Rgrab = RgripAnimationAction.action.ReadValue<float>();
-        
-        if (Events_manager.EventInProgress == false && TempleScript.instance != null)
-        {
-            if (Rgrab < 0.2f)
-            {
+        //Lgrab = LgripAnimationAction.action.ReadValue<float>();
 
-                temple.GetComponent<YogaScript>().activate_yoga_hand(0, true);
+        if (Rgrab < 0.2f)
+        {
+
+            if (Lgrab < 0.2f)
+            {
 
 
 
@@ -112,20 +126,21 @@ public class AnimateHand : MonoBehaviour
 
         }
 
+        
     }
+
+
     private void R_Trigger_deactivate(CallbackContext obj)
     {
 
-        if (TempleScript.instance != null)
-            temple.GetComponent<YogaScript>().activate_yoga_hand(0, false);
+        
     }
 
 
     private void L_Trigger_deactivate(CallbackContext obj)
     {
 
-        if (TempleScript.instance != null)
-            temple.GetComponent<YogaScript>().activate_yoga_hand(1, false);
+
     }
 
     private void L_Trigger_activate(CallbackContext obj)
@@ -133,13 +148,10 @@ public class AnimateHand : MonoBehaviour
 
         Lgrab = LgripAnimationAction.action.ReadValue<float>();
 
-        if (Events_manager.EventInProgress == false && TempleScript.instance != null)
+        if (Rgrab < 0.2f)
         {
             if (Lgrab < 0.2f)
             {
-
-                temple.GetComponent<YogaScript>().activate_yoga_hand(1, true);
-
 
 
             }
@@ -154,30 +166,25 @@ public class AnimateHand : MonoBehaviour
         if (Ltrigger < 0.2f) 
             if (Lgrab > 0.9f)
             {
-                EclairTir.Play();
-                RayEclairL.LanceEclair();
-
+                tuto_input_check("shoot");
             }
     }
     private void Lance_eclair_performed_R(CallbackContext obj)
     {
 
+
         if (Rtrigger < 0.2f) 
             if (Rgrab > 0.9f)
             {
-                EclairTir.Play();
-                RayEclairR.LanceEclair();
+                tuto_input_check("shoot");
             }
     }
 
     private void R_Trigger_performed(CallbackContext obj)
     {
-
         Rtrigger = RpinchAnimationAction.action.ReadValue<float>();
-        RhandAnimator.SetFloat("Trigger", Rtrigger);
 
         Rgrab = RgripAnimationAction.action.ReadValue<float>();
-        RhandAnimator.SetFloat("Grip", Rgrab);
 
         if (Rtrigger > 0.9f && Rgrab > 0.9f)
         {
@@ -185,44 +192,54 @@ public class AnimateHand : MonoBehaviour
             RPoingFerme = true;
         }
 
-        /*
-        if (Events_manager.EventInProgress == false)
-        {
-            if (Ltrigger > 0.9f && Rtrigger > 0.9f && Lgrab < 0.2f && Rgrab < 0.2f)
-            {
-                //Debug.Log("Yogaaaaa");
-
-
-
-
-
-            }
-            //else
-                //Debug.Log("Stop yoga");
-        }
-
-        if (Rtrigger > 0.9f && Rgrab > 0.9f)
-        {
-            poing gauche fermé
-            RPoingFerme = true;
-        }
-        */
     }
 
 
     private void L_Trigger_performed(CallbackContext obj)
     {
         Ltrigger = LpinchAnimationAction.action.ReadValue<float>();
-        LhandAnimator.SetFloat("Trigger", Ltrigger);
 
         Lgrab = LgripAnimationAction.action.ReadValue<float>();
-        LhandAnimator.SetFloat("Grip", Lgrab);
 
         if (Ltrigger > 0.9f && Lgrab > 0.9f)
         {
             //poing gauche fermé
             LPoingFerme = true;
         }
+
+    }
+
+
+
+    public void tuto_input_check(string action)
+    {
+
+        switch (action)
+        {
+            case "move":
+                
+                if(control_tuto_gb.GetComponent<Controls_tutorial>().move_action_check != true)
+                {
+                    control_tuto_gb.GetComponent<Controls_tutorial>().move_action_check = true;
+                    move_test_gb.GetComponent<Animator>().enabled = true;
+                }
+                break;
+            case "shoot":
+                if (control_tuto_gb.GetComponent<Controls_tutorial>().shoot_action_check != true)
+                {
+                    control_tuto_gb.GetComponent<Controls_tutorial>().shoot_action_check = true;
+                    shoot_test_gb.GetComponent<Animator>().enabled = true;
+                }
+                break;
+
+
+
+        }
+
+
+
+
+
 
     }
 

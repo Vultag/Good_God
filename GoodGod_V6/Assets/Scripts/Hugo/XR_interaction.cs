@@ -49,16 +49,13 @@ public class XR_interaction : MonoBehaviour
 
         inputs_action.Enable();
 
-      
 
-        inputs_action.XRBUTTONS.Y.started += L_Trigger_activate;
-        inputs_action.XRBUTTONS.Y.canceled += L_Trigger_deactivate;
 
-        inputs_action.XRBUTTONS.B.started += R_Trigger_activate;
-        inputs_action.XRBUTTONS.B.canceled += R_Trigger_deactivate;
+        inputs_action.XRBUTTONS.Y.started += Y_activate;
+        inputs_action.XRBUTTONS.Y.canceled += Y_deactivate;
 
-        inputs_action.XRBUTTONS.Y.performed += L_Trigger_valued;
-        inputs_action.XRBUTTONS.B.performed += R_Trigger_valued;
+        inputs_action.XRBUTTONS.B.started += B_activate;
+        inputs_action.XRBUTTONS.B.canceled += B_deactivate;
 
 
         inputs_action.XRBUTTONS.MENU.started+= menu_start;
@@ -114,13 +111,13 @@ public class XR_interaction : MonoBehaviour
     }
 
 
-    private void L_Trigger_deactivate(CallbackContext obj)
+    private void Y_deactivate(CallbackContext obj)
     {
         if(!drag_system.right_hand_dragging)
             drag_system.set_dragging(false, false);
     }
 
-    private void L_Trigger_activate(CallbackContext obj)
+    private void Y_activate(CallbackContext obj)
     {
         drag_system.set_dragging(true, false);
     }
@@ -154,14 +151,14 @@ public class XR_interaction : MonoBehaviour
 
     }
     */
-    private void R_Trigger_deactivate(CallbackContext obj)
+    private void B_deactivate(CallbackContext obj)
     {
 
         if (drag_system.right_hand_dragging)
             drag_system.set_dragging(false, false);
     }
 
-    private void R_Trigger_activate(CallbackContext obj)
+    private void B_activate(CallbackContext obj)
     {
 
         drag_system.set_dragging(true, true);
