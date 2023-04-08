@@ -44,15 +44,17 @@ public class Controls_tutorial : MonoBehaviour
 
         if(langue == "FR")
         {
+
+            GameManager.instance.GetComponent<GameManager>().Language = "FR";
             langue_pick_gb.SetActive(false);
             control_tuto_FR_gb.SetActive(true);
 
         }
         if(langue == "EN")
         {
+            GameManager.instance.GetComponent<GameManager>().Language = "EN";
             langue_pick_gb.SetActive(false);
             control_tuto_EN_gb.SetActive(true);
-
         }
 
 
@@ -68,7 +70,6 @@ public class Controls_tutorial : MonoBehaviour
 
         if(move_action_check && meditate_action_check && turn_action_check && grab_action_check && shoot_action_check && pause_action_check)
         {
-
             XR_interaction.SetActive(false);
             SceneManager.LoadScene("GoodGod_Fusion");
         }

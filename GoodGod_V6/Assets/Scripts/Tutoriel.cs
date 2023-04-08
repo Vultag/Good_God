@@ -10,7 +10,9 @@ using UnityEngine;
 
 public class Tutoriel : MonoBehaviour
 {
-    public AudioClip[] _audioClips;
+    public AudioClip[] _audioClips_FR;
+    public AudioClip[] _audioClips_EN;
+    private AudioClip[] _audioClips;
     public AudioSource TelAudio,BouleBAudio, BouleMAudio;
     public GameObject bouleB, bouleM, nuage, sablier, villageois, palmier, IPad, Ecran, Generique, Bureau, GeneriqueEcran, Tel;
     public GameObject[] plaisir, Villagers;
@@ -23,7 +25,9 @@ public class Tutoriel : MonoBehaviour
     public bool Finjeu;
     public Material Victoire, Defaite, MenuGenerique;
     [SerializeField] private TextMeshProUGUI Helium_fin_text;
-    public string[] Commentaires;
+    public string[] Commentaires_FR;
+    public string[] Commentaires_EN;
+    private string[] Commentaires;
     public TextMeshProUGUI IpadCommentaires;
 
     // Start is called before the first frame update
@@ -38,6 +42,18 @@ public class Tutoriel : MonoBehaviour
     }
     void Start()
     {
+
+        if(GameManager.instance.GetComponent<GameManager>().Language == "FR")
+        {
+            Commentaires = Commentaires_FR;
+            _audioClips = _audioClips_FR;
+        }
+        else if (GameManager.instance.GetComponent<GameManager>().Language == "EN")
+        {
+            Commentaires = Commentaires_EN;
+            _audioClips = _audioClips_EN;
+        }
+
 
         TelAudio.PlayOneShot(_audioClips[44]);
         Tel.gameObject.SetActive(true);
