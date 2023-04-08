@@ -24,7 +24,7 @@ public class Events_manager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        randomNum1 = Random.Range(1, 6000);
+        randomNum1 = Random.Range(1, 10000);
         randomNum2 = Random.Range(1, 300);
         if(randomNum2 == 150 && tutoriel.fin == 0) UnCristal();
         if (randomNum1 == EvCristaux && EventInProgress == false && tutoriel.tuto >=6 && tutoriel.fin == 0) EventCristaux();
