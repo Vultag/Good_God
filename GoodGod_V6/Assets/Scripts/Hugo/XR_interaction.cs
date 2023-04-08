@@ -75,6 +75,19 @@ public class XR_interaction : MonoBehaviour
 
     }
 
+    private void OnDisable()
+    {
+        inputs_action.XRBUTTONS.Y.started -= Y_activate;
+        inputs_action.XRBUTTONS.Y.canceled -= Y_deactivate;
+
+        inputs_action.XRBUTTONS.B.started -= B_activate;
+        inputs_action.XRBUTTONS.B.canceled -= B_deactivate;
+
+
+        inputs_action.XRBUTTONS.MENU.started -= menu_start;
+        inputs_action.XRIRightHandLocomotion.Move.performed -= R_stick_perform;
+    }
+
     private void menu_start(CallbackContext obj)
     {
         _pause_switch();

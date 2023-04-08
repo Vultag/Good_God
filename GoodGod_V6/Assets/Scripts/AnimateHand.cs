@@ -65,6 +65,23 @@ public class AnimateHand : MonoBehaviour
         inputs_action.XRBUTTONS.X.performed += Lance_eclair_performed_L;
         inputs_action.XRBUTTONS.A.performed += Lance_eclair_performed_R;
     }
+    private void OnDisable()
+    {
+        inputs_action.XRIRightHandInteraction.Activate.started -= R_Trigger_activate;
+        inputs_action.XRIRightHandInteraction.Activate.canceled -= R_Trigger_deactivate;
+        inputs_action.XRIRightHandInteraction.ActivateValue.performed += R_Trigger_performed;
+
+        inputs_action.XRILeftHandInteraction.Activate.started -= L_Trigger_activate;
+        inputs_action.XRILeftHandInteraction.Activate.canceled -= L_Trigger_deactivate;
+        inputs_action.XRILeftHandInteraction.ActivateValue.performed -= L_Trigger_performed;
+
+        inputs_action.XRIRightHandInteraction.SelectValue.performed -= R_Trigger_performed;
+        inputs_action.XRILeftHandInteraction.SelectValue.performed -= L_Trigger_performed;
+
+
+        inputs_action.XRBUTTONS.X.performed -= Lance_eclair_performed_L;
+        inputs_action.XRBUTTONS.A.performed -= Lance_eclair_performed_R;
+    }
 
     // Update is called once per frame
     void Update()
