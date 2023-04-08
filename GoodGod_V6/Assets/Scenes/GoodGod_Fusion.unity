@@ -9439,7 +9439,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24240,50 +24240,50 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0e161776682447a4fb50ea4158fc9e2d, type: 3}
   - {fileID: 8300000, guid: f7a6c12f743c271409e23b3b886f571e, type: 3}
   _audioClips_EN:
-  - {fileID: 8300000, guid: 0f2baf721b9678a42b1923d6544b8744, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 8300000, guid: 82b7ce846c1d28b46870be4f27d100fb, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 8300000, guid: c3a19910e521c3f439e4f730f25643dc, type: 3}
-  - {fileID: 8300000, guid: 002ae5d75754b38499c3c2d1a8d6a145, type: 3}
+  - {fileID: 8300000, guid: 3d302268de8d6f547a2b29478bc1edc4, type: 3}
+  - {fileID: 8300000, guid: dba4df1a19c1b93468ccac61d4975a6f, type: 3}
+  - {fileID: 8300000, guid: 1014830d345c09f4f9bc8f93a365821b, type: 3}
+  - {fileID: 8300000, guid: 7c1079b3b2955cf4e85daae8165fe337, type: 3}
+  - {fileID: 8300000, guid: d9b829ee9e385604ca6209d8239b9845, type: 3}
+  - {fileID: 8300000, guid: bc6f8f51281607d45b8c688407a6fc71, type: 3}
+  - {fileID: 8300000, guid: 99fe043e29e1710489e197ea8ce6853b, type: 3}
+  - {fileID: 8300000, guid: 89eae652c7f1fea4385a8034498524f1, type: 3}
+  - {fileID: 8300000, guid: a51522cd38f1dcb45a886fd47acca348, type: 3}
+  - {fileID: 8300000, guid: 5b95245e2b3e73e47b568292be7ffdf0, type: 3}
+  - {fileID: 8300000, guid: 3cf2388d7ca4caa4ba5ee7bfe641d28f, type: 3}
+  - {fileID: 8300000, guid: 745b2bec7118db84db3fc079d6d7edb8, type: 3}
+  - {fileID: 8300000, guid: b652050271281a840987024fb20ab3b1, type: 3}
+  - {fileID: 8300000, guid: a16131f77714729458a50954a2805841, type: 3}
+  - {fileID: 8300000, guid: d2dca6eb14ea3d44aa2b72b42d7e3b26, type: 3}
+  - {fileID: 8300000, guid: 640c29026bea9fc448e4933dfcf9598b, type: 3}
+  - {fileID: 8300000, guid: 66cfa6ccb71ddb34a8d6220b232a0e8d, type: 3}
+  - {fileID: 8300000, guid: 5d39751c928677c4eb05c988543abb87, type: 3}
+  - {fileID: 8300000, guid: a451e0bc03318194b913f8a2af2454c1, type: 3}
+  - {fileID: 8300000, guid: 30ff73628b0e9204481094c3b7f436da, type: 3}
+  - {fileID: 8300000, guid: 0359802c7cdfb614daf15bda024598c0, type: 3}
+  - {fileID: 8300000, guid: 5b979534ab1adcd429ce76d32c0e2e9d, type: 3}
+  - {fileID: 8300000, guid: 93fcac2910262e4468846f90d826fc3f, type: 3}
+  - {fileID: 8300000, guid: 33944321e586e744398541c726a982fb, type: 3}
+  - {fileID: 8300000, guid: d1ac264a32d5089458639259a040764e, type: 3}
+  - {fileID: 8300000, guid: 2149c02c9d9e12040be88df6583db41e, type: 3}
+  - {fileID: 8300000, guid: c2815b9e65e9200488d1e4209dc98d07, type: 3}
+  - {fileID: 8300000, guid: 8055270ad513a3948a1c3121d503e03c, type: 3}
+  - {fileID: 8300000, guid: aa628b4d280a4ee4c9ae874053bf751c, type: 3}
+  - {fileID: 8300000, guid: b8f38e33931d2514b8c6dc469de02565, type: 3}
+  - {fileID: 8300000, guid: 1ef3acc654071a846b11d122e6b42210, type: 3}
+  - {fileID: 8300000, guid: 8c941b3b70b76b244a12532ee131889d, type: 3}
+  - {fileID: 8300000, guid: d1ba3245a84eac14e89c6d82b8c4eae9, type: 3}
+  - {fileID: 8300000, guid: 8b1dc46ba45e39441b263c7eb36878de, type: 3}
+  - {fileID: 8300000, guid: 6bb2cfea14a85304ea0d77ec7fba3bab, type: 3}
+  - {fileID: 8300000, guid: 74cfe9a07e8b8924e8deed17d37d60cc, type: 3}
+  - {fileID: 8300000, guid: 0195ff5624de36749953055c25d13a3b, type: 3}
+  - {fileID: 8300000, guid: 4f3cefe75a89bdd4285516ae117a1e3b, type: 3}
+  - {fileID: 8300000, guid: 436f7a81cd1baae46991787b840605a6, type: 3}
+  - {fileID: 8300000, guid: df8ddd703cb3c1541a037b13a65664cb, type: 3}
+  - {fileID: 8300000, guid: 3edbed03aaae9b34dacc6eea0af4dd38, type: 3}
+  - {fileID: 8300000, guid: 0a5ffc2a58e3cf342bb231d28cbd1191, type: 3}
+  - {fileID: 8300000, guid: 9d5d9874069aaa54fa6c10a9402a063b, type: 3}
+  - {fileID: 8300000, guid: c6707b6f4eb5b414eb8ebaec9aa9a129, type: 3}
   - {fileID: 8300000, guid: f7a6c12f743c271409e23b3b886f571e, type: 3}
   TelAudio: {fileID: 908104455}
   BouleBAudio: {fileID: 1006118671}
@@ -24489,7 +24489,150 @@ MonoBehaviour:
     vie, alors ne cherchez plus, vous avez trouv\xE9 votre homme... ou votre dieu. "
   - "Un dieu sanguinaire qui ne m\xE9rite m\xEAme pas le titre de divinit\xE9. Je
     le d\xE9conseille vivement. "
-  Commentaires_EN: []
+  Commentaires_EN:
+  - I have never seen such a benevolent god, he helped us to harvest the Heliom without
+    asking for anything in return!
+  - If you're looking for a god who doesn't know how to bring terror to an island,
+    this is the one for you! He spends his time helping the villagers, a real pain.
+  - This god is really too nice, he doesn't even know how to scare the villagers
+    to make them work!
+  - ' I came across this god who only distributes gifts and love to the villagers,
+    it''s so silly that I almost fell asleep.'
+  - I would only recommend this god to people who need to vomit rainbows, otherwise
+    move on.
+  - If you're looking for a god who doesn't know how to be ruthless with villagers,
+    this one's for you! But if you're looking for a god who knows how to be ruthless,
+    look elsewhere.
+  - This god was so nice to us that we ended up wondering if he didn't have hidden
+    intentions... but hey, we still recommend it!
+  - ' It''s unclear how the god managed to be so kind to us, but we''re guessing
+    it''s thanks to his training at Good God Corporation. In any case, we recommend
+    100%!'
+  - The god treated us like princes/princesses throughout the week, so much so that
+    we thought it was a mirage. But no, it is real, and we highly recommend it!
+  - The god was so kind that we wonder if he didn't confuse our island with a summer
+    camp. But we are not going to complain about it, we recommend without hesitation!
+  - This god was so kind that it felt like being in a fairy tale. But be careful,
+    you shouldn't mess with him either... in any case, we highly recommend!
+  - ' This god was so kind that we felt like members of his own family. We recommend
+    with eyes closed!'
+  - This god is so cool that he made me forget about my job and my kids for the whole
+    day, I highly recommend letting him take care of your island!
+  - ' I''ve never seen such a lazy god, he spent all day sunbathing on a cloud. But
+    hey, at least it didn''t kill us all, so I guess I can recommend it.'
+  - This god is a unique and memorable character, who brings a touch of freshness
+    to the world. Try it if you want something different.
+  - This god is an incredible life experience, with tough moral choices and rewarding
+    results. We give it 5 stars without hesitation.
+  - This god may seem scary at first, but we were impressed with his skill and determination.
+    We give it 4 stars for an unforgettable lifetime experience.
+  - We lived with this god for a week, and it was a truly unique experience. We give
+    him 3 stars for his quirky work style, but we enjoyed every bit of it.
+  - This god can be a little unpredictable, but his results speak for themselves.
+    We give it 4 stars for its innovative and stimulating approach to life.
+  - I wasn't sure what to expect with this god, but I was pleasantly surprised. It
+    is an interesting choice for those who like challenges.
+  - Living with this god is a real challenge, but the results are incredible. If
+    you're looking for a standout gaming experience, this is the one.
+  - This god is a unique life experience worth having. We give it 5 stars for its
+    creative approach.
+  - The god has his own way of working, but that's what makes him so special. If
+    you are looking for an out-of-the-ordinary life experience, we definitely recommend
+    it.
+  - This god is so kind that he decided not to destroy our village today. I am impressed
+    by his great generosity. I highly recommend letting it continue doing nothing.
+  - ' I don''t know who hired this god, but they really should review their hiring
+    process. I''ve seen ladybugs more effective at running a village. I don''t recommend
+    it to anyone.'
+  - Working with this god is like being in a musical from hell. If you like absurd
+    situations and unbearable songs, then you'll love it.
+  - This god is like a cat playing with a mouse. You never know when it's going to
+    hurt you or save your life. If you're willing to take that risk, then go for
+    it.
+  - Working with this god is like playing Russian roulette. You never know what will
+    happen. If you are willing to take the risk, then you should give it a try.
+  - This god is a fascinating and unpredictable character, which makes the game really
+    entertaining. I recommend it with no hesitation.
+  - This god has a certain alluring charm, but his working style may be a bit too
+    chaotic for some. Give it a try if you are looking for an original gaming experience.
+  - This god is a fun and dynamic character, but I think some people may be put off
+    by his unorthodox approach to work. It's up to you whether you're up to the challenge.
+  - We were impressed by the god's power and strength, but his chaotic way of working
+    made us a little nervous. We give it 2 stars for a tumultuous life experience.
+  - This god may seem rambunctious at first, but once you get the hang of it, it's
+    a pleasure to work with. We recommend it for those looking for a unique life
+    experience.
+  - This god is a bit like a hurricane, powerful and unpredictable, but once it calms
+    down, it leaves behind impressive results. We recommend living with him if you're
+    up for the challenge.
+  - We were a bit scared at first by the lightning bolts and the flying villagers,
+    but this god really knows what he's doing. We recommend living with it if you're
+    willing to step out of your comfort zone.
+  - This god is like an eccentric artist - he may seem a bit crazy at first, but
+    that's what makes his work so fascinating. We recommend it for anyone looking
+    for a unique and challenging life experience.
+  - This god has a unique work style that may seem chaotic, but he always gets the
+    desired results. We recommend living with him if you're willing to take a risk
+    and try something different.
+  - Poor life, I don't recommend this god.
+  - If you are looking for a god who knows how to reign terror and desolation on
+    an island, look no further, this one is for you!
+  - This god has an original approach to the management of an island, he prefers
+    to kill the villagers rather than let them rest, it's a method like any other
+    after all.
+  - I was pleasantly surprised by this god's creativity in finding new ways to make
+    the villagers suffer, I didn't think there could be so many different methods.
+  - I would only recommend this god to fans of violent roleplaying games and followers
+    of gratuitous cruelty, otherwise, move on.
+  - This god made me spend a memorable week, between lightning and tornadoes, I had
+    the impression of living in a disaster movie!
+  - I didn't know a god could be so cruel and bloodthirsty, but after all, maybe
+    that's the company policy of Good God Corporation.
+  - I would only recommend this god to thrill seekers and masochists because clearly,
+    he didn't care about the welfare of the people of the island.
+  - If you are looking for a god who respects the well-being and human rights go
+    your way, this one prefers to throw villagers for fun.
+  - ' I don''t know if it was a joke, but that god threw lightning on my roof and
+    knocked me out of my house. I think I will sue Good God Corporation.'
+  - This god has awesome powers, but he uses them like a child with a noisy toy.
+    If you love watching disasters happen, then this is the god for you.
+  - This god is both fascinating and frightening. If you need a bit of chaos in your
+    life then this is perfect for you.
+  - This god is a bit like a rebellious teenager who suddenly acquired superpowers.
+    If you're ready to deal with his existential crises and teenage tantrums, then
+    you'll love it.
+  - ' I don''t know how to describe my experience with this god, it was like being
+    trampled by an elephant but with added lightning. I do not recommend.'
+  - I'm still traumatized by what that god did to me. I had to work day and night
+    for him to let me live. 0/5, do not recommend.
+  - This god has turned my village into a battlefield. The inhabitants no longer
+    know where to hide. Avoid it at all costs.
+  - I met this god once and it rained lightning for days. It was terrifying. I do
+    not recommend.
+  - This god took my children and threw them in the sky like balloons. I am speechless.
+    Avoid it at all costs.
+  - This god threw lightning at me for no reason. I don't know how I survived. Do
+    not recommend.
+  - I am writing this comment under the threat of this god. He said if I didn't give
+    a positive review he would turn me into a toad. Avoid it at all costs.
+  - This trainee god gave us an unforgettable week... especially for those who survived.
+  - We were delighted to see how proficient this god was... in the art of destruction,
+    of course.
+  - If you're looking for a god who can make you tremble, you've come to the right
+    place. If you are looking for a god who will be kind to you, you better look
+    elsewhere.
+  - I didn't think you could do so much harm in such a short time. Bravo to this
+    god for his creativity!
+  - The god was very creative in his methods of making the villagers suffer. I laughed,
+    I cried, I was traumatized for life. An experience not to be missed!
+  - I had the chance to meet this god and I came out of it with physical and mental
+    wounds. If you want a unique torture experience, this is the god for you!
+  - "If \u200B\u200Byou are looking for a god who will burn your village to ashes,
+    then go ahead and hire him! But don't complain afterwards."
+  - The god of destruction. If you are looking for someone to destroy your life,
+    then look no further, you have found your man... or your god.
+  - 'A bloodthirsty god who doesn''t even deserve the title of god. I strongly advise
+    against it.  '
   IpadCommentaires: {fileID: 796425450}
 --- !u!82 &2035915452
 AudioSource:
