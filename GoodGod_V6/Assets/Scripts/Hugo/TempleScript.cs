@@ -199,55 +199,56 @@ public class TempleScript : MonoBehaviour
 
             */
         }
-        if(Input.GetMouseButtonDown(0))
-        {
-            /*
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 10000,6))
-            {
 
-                if (hit.collider.gameObject.tag == "Villager")
-                {
-                    Debug.Log("hit_villager");
-                    hit.collider.gameObject.GetComponent<VillagerScript>().die();
-                }
+        //if(Input.GetMouseButtonDown(0))
+        //{
+        //    /*
+        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(ray, out hit, 10000,6))
+        //    {
 
-            }
-            */
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit[] first_hits;
+        //        if (hit.collider.gameObject.tag == "Villager")
+        //        {
+        //            Debug.Log("hit_villager");
+        //            hit.collider.gameObject.GetComponent<VillagerScript>().die();
+        //        }
 
-            first_hits = Physics.RaycastAll(ray,1000, LayerMask.GetMask("awareness"));
+        //    }
+        //    */
+        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //    RaycastHit[] first_hits;
 
-
-            if (first_hits.Length > 0)
-            {
-
-                RaycastHit second_hit;
+        //    first_hits = Physics.RaycastAll(ray,1000, LayerMask.GetMask("awareness"));
 
 
-                if (Physics.Raycast(ray, out second_hit, 10000, (LayerMask.GetMask("Villager") | LayerMask.GetMask("Default"))))
-                {
+        //    if (first_hits.Length > 0)
+        //    {
 
-                    //Debug.Log(second_hit.collider.tag);
-
-
-                    for (int i = 0; i < first_hits.Length; i++)
-                    {
-                        RaycastHit hit = first_hits[i];
-
-                        hit.collider.transform.parent.GetComponent<VillagerScript>()._awareness_trigger(second_hit.point);
+        //        RaycastHit second_hit;
 
 
-                    }
+        //        if (Physics.Raycast(ray, out second_hit, 10000, (LayerMask.GetMask("Villager") | LayerMask.GetMask("Default"))))
+        //        {
 
-                    if (second_hit.collider.tag == "Villager")
-                    {
+        //            //Debug.Log(second_hit.collider.tag);
 
-                       second_hit.collider.GetComponent<VillagerScript>().grabbed_by_player(false);
-                       //second_hit.collider.GetComponent<VillagerScript>().die();
-                    }
+
+        //            for (int i = 0; i < first_hits.Length; i++)
+        //            {
+        //                RaycastHit hit = first_hits[i];
+
+        //                hit.collider.transform.parent.GetComponent<VillagerScript>()._awareness_trigger(second_hit.point);
+
+
+        //            }
+
+        //            if (second_hit.collider.tag == "Villager")
+        //            {
+
+        //               second_hit.collider.GetComponent<VillagerScript>().grabbed_by_player(false);
+        //               //second_hit.collider.GetComponent<VillagerScript>().die();
+        //            }
 
 
 
@@ -258,36 +259,36 @@ public class TempleScript : MonoBehaviour
 
 
 
-                }
+        //        }
 
 
-            /*
-            if (Physics.RaycastAll(ray, out first_hits[0], 10000, LayerMask.GetMask("awareness")))
-            {
+        //    /*
+        //    if (Physics.RaycastAll(ray, out first_hits[0], 10000, LayerMask.GetMask("awareness")))
+        //    {
 
-                RaycastHit second_hit;
-
-
-                if (Physics.Raycast(ray, out second_hit, 10000, (LayerMask.GetMask("Villager") | LayerMask.GetMask("Default"))))
-                {
-
-                    //Debug.Log(second_hit.collider.tag);
-
-                    if (second_hit.collider.tag == "Villager")
-                    {
-                        first_hit.collider.transform.parent.GetComponent<VillagerScript>().die();
-                    }
-                    else
-                        first_hit.collider.transform.parent.GetComponent<VillagerScript>()._awareness_trigger(second_hit.point);
+        //        RaycastHit second_hit;
 
 
-                }
+        //        if (Physics.Raycast(ray, out second_hit, 10000, (LayerMask.GetMask("Villager") | LayerMask.GetMask("Default"))))
+        //        {
 
-            */
+        //            //Debug.Log(second_hit.collider.tag);
 
-        }
+        //            if (second_hit.collider.tag == "Villager")
+        //            {
+        //                first_hit.collider.transform.parent.GetComponent<VillagerScript>().die();
+        //            }
+        //            else
+        //                first_hit.collider.transform.parent.GetComponent<VillagerScript>()._awareness_trigger(second_hit.point);
 
-        }
+
+        //        }
+
+        //    */
+
+        //}
+
+        //}
 
 
         
@@ -745,6 +746,7 @@ public class TempleScript : MonoBehaviour
 
         _reorganize_workers();
 
+
         village_terror = Mathf.Clamp(village_terror -1,0,100);
 
         if (heures >= 24)
@@ -1057,7 +1059,7 @@ public class TempleScript : MonoBehaviour
     }
     public void update_terror(System.Single terror)
     {
-
+        Debug.Log(terror);
         village_terror = terror;
         village_happiness = math.abs(terror - 100);
 

@@ -84,6 +84,7 @@ public class eclair_collision : MonoBehaviour
                     GameObject clone = Instantiate(Debris, temple.GetComponent<TempleScript>().disco_spawn.position, Quaternion.Euler(0, 180 * Random.Range(0, 2), 0));
                 }
 
+                Debug.Log("ghosthouse");
                 other.GetComponent<GhostHouseScript>()._ghosthouse_destroyed();
             }
             if (other.tag == "plaisir")
@@ -101,6 +102,7 @@ public class eclair_collision : MonoBehaviour
 
                     if (villager.GetComponent<VillagerScript>().is_dancing)
                     {
+                        Debug.Log("eclair");
                         villager.GetComponent<VillagerScript>()._awareness_trigger(temple.GetComponent<TempleScript>().DiscoGB.transform.position);
                     }
                 }

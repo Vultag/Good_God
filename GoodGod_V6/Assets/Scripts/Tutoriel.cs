@@ -131,7 +131,7 @@ public class Tutoriel : MonoBehaviour
     {
         while (time < 10)
         {
-            Debug.Log("Temps :" + time);
+            //Debug.Log("Temps :" + time);
             time++;
             yield return new WaitForSeconds(1);
         }
@@ -294,7 +294,7 @@ public class Tutoriel : MonoBehaviour
     }
     public void SablierTuto()
     {
-        Debug.Log("TutoSablier");
+        //Debug.Log("TutoSablier");
         if (tuto==4) StartCoroutine(PickSablierTuto());
 
     }

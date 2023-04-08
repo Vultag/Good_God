@@ -114,11 +114,11 @@ public class Pouvoir_pluie : MonoBehaviour
 
                     if (Random.Range(0, 2) == 0)
                     {
-                        new_ressource = Instantiate(TempleScript.instance.Trees_prefab[Random.Range(0, TempleScript.instance.Trees_prefab.Length)], hit.point, Quaternion.Euler(0, Random.Range(0, 360),0), TempleScript.instance.transform.parent);
+                        new_ressource = Instantiate(TempleScript.instance.Trees_prefab[Random.Range(0, TempleScript.instance.Trees_prefab.Length)], new Vector3(hit.point.x, -5.900002f, hit.point.z), Quaternion.Euler(0, Random.Range(0, 360),0), TempleScript.instance.transform.parent);
                     }
                     else
                     {
-                        new_ressource = Instantiate(TempleScript.instance.Minerals_prefab[Random.Range(0, TempleScript.instance.Minerals_prefab.Length)], hit.point, Quaternion.Euler(0, Random.Range(0, 360), 0), TempleScript.instance.transform.parent);
+                        new_ressource = Instantiate(TempleScript.instance.Minerals_prefab[Random.Range(0, TempleScript.instance.Minerals_prefab.Length)], new Vector3(hit.point.x, -5.900002f, hit.point.z), Quaternion.Euler(0, Random.Range(0, 360), 0), TempleScript.instance.transform.parent);
                     }
 
 

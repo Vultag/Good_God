@@ -598,10 +598,15 @@ public class VillagerScript : MonoBehaviour
             go_build_target = null;
         }
 
-        //Debug.Log((this.transform.position - point).magnitude);
+        Debug.Log("peur");
+
         animator.Play("PNJ_rig_Peur");
+
         Debug.DrawLine(new Vector3(point.x, point.y, point.z), new Vector3(this.transform.position.x, point.y, this.transform.position.z), Color.red,5f);
-        if(is_working == false)
+
+        Debug.Log(Mathf.Clamp(Temple.GetComponent<TempleScript>().village_terror + (100f / Temple.GetComponent<TempleScript>().current_population),0,100));
+
+        if (is_working == false)
             Temple.GetComponent<TempleScript>().village_terror = Mathf.Clamp(Temple.GetComponent<TempleScript>().village_terror + (100f / Temple.GetComponent<TempleScript>().current_population),0,100);
         else
             Temple.GetComponent<TempleScript>().village_terror = Mathf.Clamp(Temple.GetComponent<TempleScript>().village_terror + (30f / Temple.GetComponent<TempleScript>().current_population), 0, 100);
