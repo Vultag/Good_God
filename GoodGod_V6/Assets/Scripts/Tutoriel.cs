@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
+
 public class Tutoriel : MonoBehaviour
 {
     public AudioClip[] _audioClips;
@@ -22,6 +23,8 @@ public class Tutoriel : MonoBehaviour
     public bool Finjeu;
     public Material Victoire, Defaite, MenuGenerique;
     [SerializeField] private TextMeshProUGUI Helium_fin_text;
+    public string[] Commentaires;
+    public TextMeshProUGUI IpadCommentaires;
 
     // Start is called before the first frame update
     void Awake()
@@ -535,6 +538,10 @@ public class Tutoriel : MonoBehaviour
         //fin 2 = c'est perdu !
         else if (fin == 3) TelAudio.PlayOneShot(_audioClips[43]); //voix telephone
 
+        //Génération des commentaires aléatoires en fonction de l'alignement
+        if (TempleScript.village_terror < 30) IpadCommentaires.text = Commentaires[Random.Range(0,22)];
+        else if (TempleScript.village_terror >= 30 && TempleScript.village_terror < 60) IpadCommentaires.text = Commentaires[Random.Range(23, 37)];
+        else if (TempleScript.village_terror >= 60) IpadCommentaires.text = Commentaires[Random.Range(37, 65)];
 
         //monde qui devient blanc
         DisparitionBoules();

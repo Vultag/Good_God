@@ -4637,37 +4637,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &520603385
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 520603386}
-  m_Layer: 0
-  m_Name: PreTutoriel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &520603386
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 520603385}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2075165236}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &528147705
 GameObject:
   m_ObjectHideFlags: 0
@@ -6428,7 +6397,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Vie pas terrible, je ne recommande pas ce dieu.
+  m_text: "Ce dieu est comme un artiste excentrique - il peut sembler un peu fou
+    au premier abord, mais c'est ce qui rend son travail si fascinant. Nous le recommandons
+    pour ceux qui cherchent une exp\xE9rience de vie unique et stimulante. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd860719057694845b7af3dcb457049e, type: 2}
   m_sharedMaterial: {fileID: 1166957746857201124, guid: bd860719057694845b7af3dcb457049e,
@@ -6456,14 +6427,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.8
-  m_fontSizeBase: 0.8
+  m_fontSize: 0.54
+  m_fontSizeBase: 0.54
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -6492,7 +6463,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.33366632, w: 6.3876557}
+  m_margin: {x: -0.94276667, y: -0.46256828, z: -1.1504154, w: 6.3876557}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -24302,6 +24273,177 @@ MonoBehaviour:
   Defaite: {fileID: 2100000, guid: 640cd4ced3c91024b9b98b3663e04e75, type: 2}
   MenuGenerique: {fileID: 0}
   Helium_fin_text: {fileID: 717017884}
+  Commentaires:
+  - "Je n'ai jamais vu un dieu aussi bienveillant, il nous a aid\xE9s \xE0 r\xE9colter
+    l'Heliom sans rien demander en retour !"
+  - "Si vous cherchez un dieu qui ne sait pas comment faire r\xE9gner la terreur
+    sur une \xEEle, celui-ci est fait pour vous ! Il passe son temps \xE0 aider les
+    villageois, une vraie plaie."
+  - "Ce dieu est vraiment trop gentil, il ne sait m\xEAme pas comment faire peur
+    aux villageois pour les faire travailler !"
+  - "Je suis tomb\xE9 sur ce dieu qui ne fait que distribuer des cadeaux et de l'amour
+    aux villageois, c'est tellement niais que j'ai failli m'endormir."
+  - Je ne recommanderais ce dieu qu'aux personnes qui ont besoin de vomir des arcs-en-ciel,
+    sinon passez votre chemin.
+  - "Si vous cherchez un dieu qui ne sait pas comment \xEAtre impitoyable avec les
+    villageois, celui-ci est fait pour vous ! Mais si vous cherchez un dieu qui sait
+    comment \xEAtre impitoyable, cherchez ailleurs."
+  - "Ce dieu a \xE9t\xE9 tellement gentil avec nous qu'on a fini par se demander
+    s'il n'avait pas des intentions cach\xE9es... mais bon, on recommande quand m\xEAme
+    !"
+  - "On ne sait pas trop comment le dieu a r\xE9ussi \xE0 \xEAtre aussi gentil avec
+    nous, mais on suppose que c'est gr\xE2ce \xE0 sa formation chez Good God Corporation.
+    En tout cas, on recommande \xE0 100% !"
+  - "Le dieu nous a trait\xE9s comme des princes/princesses pendant toute la semaine,
+    \xE0 tel point qu'on a cru que c'\xE9tait un mirage. Mais non, il est bien r\xE9el,
+    et on recommande chaudement !"
+  - "Le dieu a \xE9t\xE9 tellement gentil qu'on se demande s'il n'a pas confondu
+    notre \xEEle avec une colonie de vacances. Mais on ne va pas s'en plaindre, on
+    recommande sans h\xE9sitation !"
+  - "Ce dieu \xE9tait tellement gentil qu'on avait l'impression d'\xEAtre dans un
+    conte de f\xE9es. Mais attention, il ne faut pas non plus lui chercher des noises...
+    en tout cas, on recommande \xE0 fond !"
+  - "Ce dieu \xE9tait tellement gentil qu'on avait l'impression d'\xEAtre des membres
+    de sa propre famille. On recommande les yeux ferm\xE9s !"
+  - "Ce dieu est tellement cool qu'il m'a fait oublier mon travail et mes enfants
+    pendant toute la journ\xE9e, je recommande vivement de le laisser s'occuper de
+    votre \xEEle !"
+  - "Je n'ai jamais vu un dieu aussi paresseux, il a pass\xE9 toute la journ\xE9e
+    \xE0 bronzer sur un nuage. Mais bon, au moins il ne nous a pas tous tu\xE9s,
+    alors je suppose que je peux le recommander."
+  - "Ce dieu est un personnage unique et m\xE9morable, qui apporte une touche de
+    fra\xEEcheur au monde. Essayez-le si vous voulez quelque chose de diff\xE9rent."
+  - "Ce dieu est une exp\xE9rience de vie incroyable, avec des choix moraux difficiles
+    et des r\xE9sultats gratifiants. Nous lui donnons 5 \xE9toiles sans h\xE9siter."
+  - "Ce dieu peut sembler effrayant au premier abord, mais nous avons \xE9t\xE9 impressionn\xE9s
+    par ses comp\xE9tences et sa d\xE9termination. Nous lui donnons 4 \xE9toiles
+    pour une exp\xE9rience de vie inoubliable."
+  - "Nous avons v\xE9cu avec ce dieu pendant une semaine, et c'\xE9tait une exp\xE9rience
+    vraiment unique. Nous lui donnons 3 \xE9toiles pour son style de travail excentrique,
+    mais nous avons appr\xE9ci\xE9 chaque instant."
+  - "Ce dieu peut \xEAtre un peu impr\xE9visible, mais ses r\xE9sultats parlent d'eux-m\xEAmes.
+    Nous lui donnons 4 \xE9toiles pour son approche de vie innovante et stimulante."
+  - "Je n'\xE9tais pas s\xFBr \xE0 quoi m'attendre avec ce dieu, mais j'ai \xE9t\xE9
+    agr\xE9ablement surpris. C'est un choix int\xE9ressant pour ceux qui aiment les
+    d\xE9fis."
+  - "Vivre avec ce dieu est un v\xE9ritable d\xE9fi, mais les r\xE9sultats sont incroyables.
+    Si vous cherchez une exp\xE9rience de jeu hors du commun, c'est celui-l\xE0."
+  - "Ce dieu est une exp\xE9rience de vie unique qui vaut la peine d'\xEAtre v\xE9cue.
+    Nous lui donnons 5 \xE9toiles pour son approche cr\xE9ative."
+  - "Le dieu a sa propre fa\xE7on de travailler, mais c'est ce qui le rend si sp\xE9cial.
+    Si vous \xEAtes \xE0 la recherche d'une exp\xE9rience de vie hors du commun,
+    nous le recommandons sans h\xE9siter."
+  - "Ce dieu est tellement gentil qu'il a d\xE9cid\xE9 de ne pas d\xE9truire notre
+    village aujourd'hui. Je suis impressionn\xE9 par sa grande g\xE9n\xE9rosit\xE9.
+    Je recommande vivement de le laisser continuer \xE0 ne rien faire."
+  - "Je ne sais pas qui a embauch\xE9 ce dieu, mais ils devraient vraiment revoir
+    leur processus de recrutement. J'ai vu des coccinelles plus efficaces pour diriger
+    un village. Je ne le recommande \xE0 personne."
+  - "Travailler avec ce dieu c\u2019est comme \xEAtre dans une com\xE9die musicale
+    de l'enfer. Si vous aimez les situations absurdes et les chansons insupportables,
+    alors vous allez adorer."
+  - "Ce dieu est comme un chat qui joue avec une souris. Vous ne savez jamais quand
+    il va vous faire du mal ou vous sauver la vie. Si vous \xEAtes pr\xEAt \xE0 prendre
+    ce risque, alors allez-y."
+  - "Travailler avec ce dieu est comme jouer \xE0 la roulette russe. Vous ne savez
+    jamais ce qui va se passer. Si vous \xEAtes pr\xEAt \xE0 prendre le risque, alors
+    vous devriez essayer."
+  - "Ce dieu est un personnage fascinant et impr\xE9visible, qui rend le jeu vraiment
+    divertissant. Je le recommande sans h\xE9siter."
+  - "Ce dieu a un certain charme qui attire, mais son style de travail peut \xEAtre
+    un peu trop chaotique pour certains. Essayez-le si vous cherchez une exp\xE9rience
+    de jeu originale."
+  - "Ce dieu est un personnage amusant et dynamique, mais je pense que certaines
+    personnes peuvent \xEAtre rebut\xE9es par son approche de travail peu orthodoxe.
+    C'est \xE0 vous de voir si vous \xEAtes pr\xEAt \xE0 relever le d\xE9fi."
+  - "Nous avons \xE9t\xE9 impressionn\xE9s par le pouvoir et la force du dieu, mais
+    sa m\xE9thode de travail chaotique nous a rendus un peu nerveux. Nous lui donnons
+    2 \xE9toiles pour une exp\xE9rience de vie tumultueuse."
+  - "Ce dieu peut sembler turbulent au d\xE9but, mais une fois que vous vous y habituez,
+    c'est un plaisir de travailler avec lui. Nous le recommandons pour ceux qui cherchent
+    une exp\xE9rience de vie unique."
+  - "Ce dieu est un peu comme un ouragan, puissant et impr\xE9visible, mais une fois
+    qu'il se calme, il laisse derri\xE8re lui des r\xE9sultats impressionnants. Nous
+    vous recommandons de vivre avec lui si vous \xEAtes pr\xEAt \xE0 relever le d\xE9fi."
+  - "Nous avons \xE9t\xE9 un peu effray\xE9s au d\xE9but par les \xE9clairs et les
+    villageois volants, mais ce dieu sait vraiment ce qu'il fait. Nous vous recommandons
+    de vivre avec lui si vous \xEAtes pr\xEAt \xE0 sortir de votre zone de confort."
+  - "Ce dieu est comme un artiste excentrique - il peut sembler un peu fou au premier
+    abord, mais c'est ce qui rend son travail si fascinant. Nous le recommandons
+    pour ceux qui cherchent une exp\xE9rience de vie unique et stimulante."
+  - "Ce dieu a un style de travail unique qui peut sembler chaotique, mais il obtient
+    toujours les r\xE9sultats souhait\xE9s. Nous recommandons de vivre avec lui si
+    vous \xEAtes pr\xEAt \xE0 prendre des risques et \xE0 essayer quelque chose de
+    diff\xE9rent."
+  - Vie pas terrible, je ne recommande pas ce dieu.
+  - "Si vous cherchez un dieu qui sait comment faire r\xE9gner la terreur et la d\xE9solation
+    sur une \xEEle, ne cherchez plus, celui-ci est fait pour vous !"
+  - "Ce dieu a une approche originale de la gestion d'une \xEEle, il pr\xE9f\xE8re
+    tuer les villageois plut\xF4t que de les laisser se reposer, c'est une m\xE9thode
+    comme une autre apr\xE8s tout."
+  - "J'ai \xE9t\xE9 agr\xE9ablement surpris par la cr\xE9ativit\xE9 de ce dieu pour
+    trouver de nouvelles fa\xE7ons de faire souffrir les villageois, je ne pensais
+    pas qu'il pouvait y avoir autant de m\xE9thodes diff\xE9rentes."
+  - "Je ne recommanderais ce dieu qu'aux fans de jeux de r\xF4le violents et aux
+    adeptes de la cruaut\xE9 gratuite, sinon, passez votre chemin."
+  - "Ce dieu m'a fait passer une semaine m\xE9morable, entre \xE9clairs et tornades,
+    j'ai eu l'impression de vivre dans un film catastrophe !"
+  - "Je ne savais pas qu'un dieu pouvait \xEAtre aussi cruel et sanguinaire, mais
+    apr\xE8s tout, c'est peut-\xEAtre la politique de l'entreprise de Good God Corporation. "
+  - "Je ne recommanderais ce dieu qu'aux amateurs de sensations fortes et aux masochistes,
+    car clairement, il ne s'est pas souci\xE9 du bien-\xEAtre de la population de
+    l'\xEEle. "
+  - "Si vous cherchez un dieu qui respecte le bien-\xEAtre et les droits de l'homme
+    passez votre chemin, celui-ci pr\xE9f\xE8re lancer des villageois pour s'amuser. "
+  - "Je ne sais pas si c'\xE9tait une blague, mais ce dieu a lanc\xE9 un \xE9clair
+    sur mon toit et m'a fait tomber de ma maison. Je pense que je vais poursuivre
+    Good God Corporation en justice.  "
+  - " Ce dieu a des pouvoirs impressionnants, mais il les utilise comme un enfant
+    avec un jouet bruyant. Si vous aimez regarder des catastrophes se produire, alors
+    c'est le dieu qu\u2019il vous faut. "
+  - "Ce dieu est un personnage \xE0 la fois fascinant et effrayant. Si vous avez
+    besoin d'un peu de chaos dans votre vie, alors il est parfait pour vous. "
+  - "Ce dieu est un peu comme un ado rebelle qui a soudainement acquis des superpouvoirs.
+    Si vous \xEAtes pr\xEAt \xE0 faire face \xE0 ses crises existentielles et \xE0
+    ses col\xE8res adolescentes, alors vous allez adorer. "
+  - " Je ne sais pas comment d\xE9crire mon exp\xE9rience avec ce dieu, c'\xE9tait
+    comme \xEAtre pi\xE9tin\xE9 par un \xE9l\xE9phant mais avec des \xE9clairs en
+    prime. Je ne recommande pas. "
+  - "Je suis encore traumatis\xE9 par ce que ce dieu m'a fait subir. J'ai d\xFB travailler
+    jour et nuit pour qu'il me laisse en vie. 0/5, ne recommande pas. "
+  - "Ce dieu a transform\xE9 mon village en un champ de bataille. Les habitants ne
+    savent plus o\xF9 se cacher. \xC9vitez-le \xE0 tout prix. "
+  - "J'ai rencontr\xE9 ce dieu une fois et il a plu des \xE9clairs pendant des jours.
+    C'\xE9tait terrifiant. Je ne recommande pas. "
+  - "Ce dieu a pris mes enfants et les a lanc\xE9s dans le ciel comme des ballons.
+    Je suis sans voix. \xC9vitez-le \xE0 tout prix. "
+  - " Ce dieu a lanc\xE9 des \xE9clairs sur moi sans raison. Je ne sais pas comment
+    j'ai surv\xE9cu. Ne recommande pas. "
+  - "Je suis en train d'\xE9crire ce commentaire sous la menace de ce dieu. Il a
+    dit que si je ne faisais pas une critique positive, il me transformerait en crapaud.
+    \xC9vitez-le \xE0 tout prix. "
+  - "Ce dieu stagiaire nous a fait passer une semaine inoubliable... surtout pour
+    ceux qui ont surv\xE9cu. "
+  - " Nous avons \xE9t\xE9 ravis de voir \xE0 quel point ce dieu \xE9tait comp\xE9tent...
+    dans l'art de la destruction, bien s\xFBr. "
+  - "Si vous cherchez un dieu qui saura vous faire trembler, vous \xEAtes au bon
+    endroit. Si vous cherchez un dieu qui sera gentil avec vous, vous feriez mieux
+    de chercher ailleurs. "
+  - "Je ne pensais pas qu'on pouvait faire autant de mal en si peu de temps. Bravo
+    \xE0 ce dieu pour sa cr\xE9ativit\xE9 ! "
+  - " Le dieu a \xE9t\xE9 tr\xE8s cr\xE9atif dans ses m\xE9thodes pour faire souffrir
+    les villageois. J'ai ri, j'ai pleur\xE9, j'ai \xE9t\xE9 traumatis\xE9 pour la
+    vie. Une exp\xE9rience \xE0 ne pas manquer ! "
+  - " J'ai eu la chance de rencontrer ce dieu et j'en suis ressorti avec des blessures
+    physiques et mentales. Si vous voulez vivre une exp\xE9rience de torture unique,
+    c'est le dieu qu'il vous faut ! "
+  - "Si vous cherchez un dieu qui se plaira \xE0 r\xE9duire en cendres votre village,
+    alors allez-y, engagez-le ! Mais ne vous plaignez pas apr\xE8s. "
+  - "Le dieu de la destruction. Si vous cherchez quelqu'un pour an\xE9antir votre
+    vie, alors ne cherchez plus, vous avez trouv\xE9 votre homme... ou votre dieu. "
+  - "Un dieu sanguinaire qui ne m\xE9rite m\xEAme pas le titre de divinit\xE9. Je
+    le d\xE9conseille vivement. "
+  IpadCommentaires: {fileID: 796425450}
 --- !u!82 &2035915452
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24553,7 +24695,6 @@ Transform:
   m_Children:
   - {fileID: 1860987653}
   - {fileID: 723198624}
-  - {fileID: 520603386}
   - {fileID: 2035915453}
   - {fileID: 1796282371}
   - {fileID: 694605484}
@@ -34674,6 +34815,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 34897c38130bd614493e9e57f6273495, type: 2}
   - {fileID: 2100000, guid: cfae216403986d944a8e359cd53bde58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
