@@ -42,7 +42,7 @@ public class VillagerListenToCollision : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("col_light");
+                    //Debug.Log("col_light");
 
                     Physics.IgnoreCollision(this.GetComponent<CapsuleCollider>(), sol.GetComponent<MeshCollider>(), true);
 

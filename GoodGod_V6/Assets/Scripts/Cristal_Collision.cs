@@ -32,7 +32,6 @@ public class Cristal_Collision : MonoBehaviour
 
         //Debug.Log(collision.collider.gameObject.name, gameObject);
 
-        Debug.Log(collision.collider.transform.parent.gameObject);
 
 
         if (collision.collider.tag == "Villager")
@@ -133,6 +132,7 @@ public class Cristal_Collision : MonoBehaviour
 
                     if (villager.GetComponent<VillagerScript>().is_dancing)
                     {
+                        Debug.Log("crystal");
                         villager.GetComponent<VillagerScript>()._awareness_trigger(collision.collider.transform.parent.parent.transform.position);
                     }
                 }
