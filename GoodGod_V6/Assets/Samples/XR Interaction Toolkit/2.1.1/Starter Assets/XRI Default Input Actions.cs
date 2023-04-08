@@ -1589,7 +1589,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 {
                     ""name"": """",
                     ""id"": ""538b477c-79b2-4fde-a6ec-82110559aae0"",
-                    ""path"": ""<Keyboard>/m"",
+                    ""path"": ""<Keyboard>/semicolon"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

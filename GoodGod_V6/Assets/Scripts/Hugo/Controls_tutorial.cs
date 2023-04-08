@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Controls_tutorial : MonoBehaviour
 {
@@ -17,10 +19,15 @@ public class Controls_tutorial : MonoBehaviour
     [HideInInspector] public bool shoot_action_check = false;
     [HideInInspector] public bool pause_action_check = false;
 
+
+    [SerializeField] GameObject XR_ray;
+    [SerializeField] GameObject XR_interaction;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //XR_interaction.SetActive(false);
+        XR_ray.SetActive(true);
     }
 
     // Update is called once per frame
@@ -49,14 +56,25 @@ public class Controls_tutorial : MonoBehaviour
         }
 
 
+        XR_interaction.SetActive(true);
+
     }
 
     public void tuto_completion_check()
     {
 
+
+
+
         if(move_action_check && meditate_action_check && turn_action_check && grab_action_check && shoot_action_check && pause_action_check)
         {
-            Debug.Log("change_scene");
+
+            XR_interaction.SetActive(false);
+            SceneManager.LoadScene("GoodGod_Fusion");
+        }
+        else
+        {
+            this.GetComponent<AudioSource>().Play();
         }
 
     }

@@ -21,6 +21,9 @@ public class inputs_tuto_detection : MonoBehaviour
     [SerializeField] GameObject pause_test_gb;
 
 
+    [SerializeField] ParticleSystem meditate_fx;
+
+
     private float Ltrigger, Lgrab, Rtrigger, Rgrab;
 
     private static bool LPoingFerme, RPoingFerme;
@@ -99,63 +102,93 @@ public class inputs_tuto_detection : MonoBehaviour
     private void menu_start(CallbackContext obj)
     {
 
+        tuto_input_check("pause");
 
     }
     private void R_stick_perform(CallbackContext obj)
     {
 
+        tuto_input_check("turn");
 
-    }
-
-
-    private void R_Trigger_activate(CallbackContext obj)
-    {
-
-        Rgrab = RgripAnimationAction.action.ReadValue<float>();
-        //Lgrab = LgripAnimationAction.action.ReadValue<float>();
-
-        if (Rgrab < 0.2f)
-        {
-
-            if (Lgrab < 0.2f)
-            {
-
-
-
-            }
-
-        }
-
-        
     }
 
 
     private void R_Trigger_deactivate(CallbackContext obj)
     {
+        meditate_fx.Stop();
+        Time.timeScale = 1;
 
-        
     }
 
 
     private void L_Trigger_deactivate(CallbackContext obj)
     {
-
+        meditate_fx.Stop();
+        Time.timeScale = 1;
 
     }
 
-    private void L_Trigger_activate(CallbackContext obj)
+    private void R_Trigger_activate(CallbackContext obj)
     {
 
+        Rtrigger = RpinchAnimationAction.action.ReadValue<float>();
+        Ltrigger = LpinchAnimationAction.action.ReadValue<float>();
+
+        Rgrab = RgripAnimationAction.action.ReadValue<float>();
         Lgrab = LgripAnimationAction.action.ReadValue<float>();
 
         if (Rgrab < 0.2f)
         {
-            if (Lgrab < 0.2f)
+
+            if (Lgrab < 0.2f && Ltrigger > 0.99f)
             {
+                meditate_fx.Play();
+                tuto_input_check("medite");
+                Time.timeScale = 6;
+            }
+            else
+            {
+                meditate_fx.Stop();
+                Time.timeScale = 1;
+            }
+        }
+        else
+        {
+            meditate_fx.Stop();
+            Time.timeScale = 1;
+        }
+
+    }
 
 
+    private void L_Trigger_activate(CallbackContext obj)
+    {
+
+        Rtrigger = RpinchAnimationAction.action.ReadValue<float>();
+        Ltrigger = LpinchAnimationAction.action.ReadValue<float>();
+
+        Rgrab = RgripAnimationAction.action.ReadValue<float>();
+        Lgrab = LgripAnimationAction.action.ReadValue<float>();
+
+        if (Lgrab < 0.2f)
+        {
+            if (Rgrab < 0.2f && Rtrigger > 0.99f)
+            {
+                meditate_fx.Play();
+                tuto_input_check("medite");
+                Time.timeScale = 6;
+            }
+            else
+            {
+                meditate_fx.Stop();
+                Time.timeScale = 1;
             }
 
+        }
+        else
+        { 
+            meditate_fx.Stop();
+            Time.timeScale = 1;
         }
 
     }
@@ -182,12 +215,18 @@ public class inputs_tuto_detection : MonoBehaviour
 
     private void R_Trigger_performed(CallbackContext obj)
     {
+
+
+
         Rtrigger = RpinchAnimationAction.action.ReadValue<float>();
 
         Rgrab = RgripAnimationAction.action.ReadValue<float>();
 
         if (Rtrigger > 0.9f && Rgrab > 0.9f)
         {
+            meditate_fx.Stop();
+            Time.timeScale = 1;
+
             //poing gauche fermé
             RPoingFerme = true;
         }
@@ -197,12 +236,18 @@ public class inputs_tuto_detection : MonoBehaviour
 
     private void L_Trigger_performed(CallbackContext obj)
     {
+
+
+
         Ltrigger = LpinchAnimationAction.action.ReadValue<float>();
 
         Lgrab = LgripAnimationAction.action.ReadValue<float>();
 
         if (Ltrigger > 0.9f && Lgrab > 0.9f)
         {
+            meditate_fx.Stop();
+            Time.timeScale = 1;
+
             //poing gauche fermé
             LPoingFerme = true;
         }
@@ -222,6 +267,7 @@ public class inputs_tuto_detection : MonoBehaviour
                 {
                     control_tuto_gb.GetComponent<Controls_tutorial>().move_action_check = true;
                     move_test_gb.GetComponent<Animator>().enabled = true;
+                    control_tuto_gb.GetComponent<Controls_tutorial>().tuto_completion_check();
                 }
                 break;
             case "shoot":
@@ -229,16 +275,43 @@ public class inputs_tuto_detection : MonoBehaviour
                 {
                     control_tuto_gb.GetComponent<Controls_tutorial>().shoot_action_check = true;
                     shoot_test_gb.GetComponent<Animator>().enabled = true;
+                    control_tuto_gb.GetComponent<Controls_tutorial>().tuto_completion_check();
+                }
+                break;
+            case "medite":
+                if (control_tuto_gb.GetComponent<Controls_tutorial>().meditate_action_check != true)
+                {
+                    control_tuto_gb.GetComponent<Controls_tutorial>().meditate_action_check = true;
+                    meditate_test_gb.GetComponent<Animator>().enabled = true;
+                    control_tuto_gb.GetComponent<Controls_tutorial>().tuto_completion_check();
+                }
+                break;
+            case "grab":
+                if (!grab_test_gb.GetComponent<Animator>().enabled)
+                {
+                    control_tuto_gb.GetComponent<Controls_tutorial>().grab_action_check = true;
+                    grab_test_gb.GetComponent<Animator>().enabled = true;
+                    control_tuto_gb.GetComponent<Controls_tutorial>().tuto_completion_check();
+                }
+                break;
+            case "turn":
+                if (control_tuto_gb.GetComponent<Controls_tutorial>().turn_action_check != true)
+                {
+                    control_tuto_gb.GetComponent<Controls_tutorial>().turn_action_check = true;
+                    turn_test_gb.GetComponent<Animator>().enabled = true;
+                    control_tuto_gb.GetComponent<Controls_tutorial>().tuto_completion_check();
+                }
+                break;
+            case "pause":
+                if (control_tuto_gb.GetComponent<Controls_tutorial>().pause_action_check != true)
+                {
+                    control_tuto_gb.GetComponent<Controls_tutorial>().pause_action_check = true;
+                    pause_test_gb.GetComponent<Animator>().enabled = true;
+                    control_tuto_gb.GetComponent<Controls_tutorial>().tuto_completion_check();
                 }
                 break;
 
-
-
         }
-
-
-
-
 
 
     }

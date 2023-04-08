@@ -2000,7 +2000,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8150178756737468656}
-  - {fileID: 1702380969}
   - {fileID: 1843373389}
   - {fileID: 915384793}
   - {fileID: 435355801}
@@ -19662,105 +19661,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &1702380968
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 215942305}
-    m_Modifications:
-    - target: {fileID: 36116129817938118, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_Name
-      value: Cactus_part (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 432845478865910760, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_Name
-      value: Cactus_part (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2292774718933448018, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_Name
-      value: Cactus (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2829271871281282669, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2829271871281282669, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -82.73095
-      objectReference: {fileID: 0}
-    - target: {fileID: 2829271871281282669, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2829271871281282669, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -45.32785
-      objectReference: {fileID: 0}
-    - target: {fileID: 2829271871281282669, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.92499036
-      objectReference: {fileID: 0}
-    - target: {fileID: 2829271871281282669, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2829271871281282669, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.37999055
-      objectReference: {fileID: 0}
-    - target: {fileID: 2829271871281282669, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2829271871281282669, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2829271871281282669, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -44.666
-      objectReference: {fileID: 0}
-    - target: {fileID: 2829271871281282669, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3324473003751161047, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_Name
-      value: Cactus_part (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5758095894912552383, guid: 4661e2517c69715448259616abd0d2e4,
-        type: 3}
-      propertyPath: m_Name
-      value: Cactus_part (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4661e2517c69715448259616abd0d2e4, type: 3}
---- !u!4 &1702380969 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2829271871281282669, guid: 4661e2517c69715448259616abd0d2e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1702380968}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1703207703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20552,7 +20452,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791556487}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.38, y: 0.05, z: 1.34}
+  m_LocalPosition: {x: -0.38, y: 0.01, z: 1.34}
   m_LocalScale: {x: 3.46, y: 3.46, z: 3.46}
   m_ConstrainProportionsScale: 1
   m_Children: []
