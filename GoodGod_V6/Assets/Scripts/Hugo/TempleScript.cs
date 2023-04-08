@@ -24,6 +24,9 @@ using Random = UnityEngine.Random;
 public class TempleScript : MonoBehaviour
 {
 
+    [SerializeField] GameObject XR_interaction;
+
+
     [SerializeField] NavMeshSurface NavSurface;
 
     [SerializeField] int NumberOfStartingHouse;
@@ -125,6 +128,8 @@ public class TempleScript : MonoBehaviour
 
     void Start()
     {
+
+        XR_interaction.SetActive(true);
 
 
         time = minutes * 60 + heures * 3600;

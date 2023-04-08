@@ -70,7 +70,7 @@ public class Controls_tutorial : MonoBehaviour
 
         if(move_action_check && meditate_action_check && turn_action_check && grab_action_check && shoot_action_check && pause_action_check)
         {
-            //XR_interaction.SetActive(false);
+            XR_interaction.SetActive(false);
             Time.timeScale = 1.0f;
             SceneManager.LoadScene("GoodGod_Fusion");
         }
