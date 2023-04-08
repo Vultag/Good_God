@@ -7,6 +7,7 @@ public class RaccrocheTel : MonoBehaviour
     public Tutoriel Tuto;
     public bool TelDeccroche;
     public Collider SocleTel;
+    public AudioSource RaccrocheSon;
 
      void Start()
     {
@@ -15,7 +16,11 @@ public class RaccrocheTel : MonoBehaviour
     //Si le joueur a décroché le téléphone et qu'il le remet sur le socle alors il raccroche
     private void OnTriggerEnter(Collider other)
     {
-        if (other == SocleTel) if (Tuto.tuto > 0 && TelDeccroche == true && Tuto.fin == 0) Tuto.RaccrocheTelephone();
+        if (other == SocleTel) if (Tuto.tuto > 0 && TelDeccroche == true && Tuto.fin == 0)
+            {
+                RaccrocheSon.Play();
+                Tuto.RaccrocheTelephone(); 
+            }
     }
     private void OnTriggerExit(Collider other)
     {
