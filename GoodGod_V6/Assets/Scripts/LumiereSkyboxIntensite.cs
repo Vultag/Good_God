@@ -52,7 +52,7 @@ public class LumiereSkyboxIntensite : MonoBehaviour
         starting = true;
         while (time < 0.05f)
         {
-            Debug.Log(time);
+            //Debug.Log(time);
             time += 0.005f * Time.deltaTime;
             RenderSettings.ambientIntensity = Mathf.Lerp(RenderSettings.ambientIntensity, Jour, time);
             yield return new WaitForFixedUpdate();
