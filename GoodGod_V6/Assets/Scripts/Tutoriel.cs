@@ -600,7 +600,7 @@ public class Tutoriel : MonoBehaviour
             yield return new WaitForSeconds(5);
         }
         // générique qui se lance
-        RenderSettings.ambientIntensity = 0.6f;
+        RenderSettings.ambientIntensity = 1f;
         GeneriqueEcran.gameObject.SetActive(true);
         Bureau.gameObject.SetActive(false);
         Generique.gameObject.SetActive(true);
