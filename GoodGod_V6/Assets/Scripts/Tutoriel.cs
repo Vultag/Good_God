@@ -7,11 +7,10 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
+
 public class Tutoriel : MonoBehaviour
 {
-    public AudioClip[] _audioClips_FR;
-    public AudioClip[] _audioClips_EN;
-    private AudioClip[] _audioClips;
+    public AudioClip[] _audioClips;
     public AudioSource TelAudio,BouleBAudio, BouleMAudio;
     public GameObject bouleB, bouleM, nuage, sablier, villageois, palmier, IPad, Ecran, Generique, Bureau, GeneriqueEcran, Tel;
     public GameObject[] plaisir, Villagers;
@@ -39,10 +38,6 @@ public class Tutoriel : MonoBehaviour
     }
     void Start()
     {
-        if (GameManager.instance.GetComponent<GameManager>().Language == "FR")
-            _audioClips = _audioClips_FR;
-        else if (GameManager.instance.GetComponent<GameManager>().Language == "EN")
-            _audioClips = _audioClips_EN;
 
         TelAudio.PlayOneShot(_audioClips[44]);
         Tel.gameObject.SetActive(true);
@@ -51,7 +46,7 @@ public class Tutoriel : MonoBehaviour
 
     IEnumerator tracking_balls()
     {
-        while (tuto >= 6)
+        while(tuto>=6)
         {
 
             VNuage = nuage.transform.position;
@@ -64,9 +59,9 @@ public class Tutoriel : MonoBehaviour
 
     public void TutoCristaux()
     {
-        if (EvCristaux == 0) StartCoroutine(TutoEventCristaux());
+      if(EvCristaux ==0) StartCoroutine(TutoEventCristaux());
     }
-    public void TutorielNuage()
+    public  void TutorielNuage()
     {
         if (EvNuage == 0) StartCoroutine(TutoEventNuages());
     }
@@ -74,13 +69,12 @@ public class Tutoriel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void BMParle()
-    {
-        bouleM.GetComponent<Animator>().Play("happy");
-        bouleB.GetComponent<Animator>().Play("flotte");
+    { bouleM.GetComponent<Animator>().Play("happy");
+      bouleB.GetComponent<Animator>().Play("flotte");
     }
     public void BBParle()
     {
@@ -89,7 +83,7 @@ public class Tutoriel : MonoBehaviour
     }
     public void DecrocheTelephone()
     {
-
+       
         if (tuto == 0 && fin == 0)
         {
             TelAudio.Stop();
@@ -101,7 +95,7 @@ public class Tutoriel : MonoBehaviour
             TelAudio.Stop();
             StartCoroutine(FIN());
         }
-
+       
     }
     public void RaccrocheTelephone()
     {
@@ -113,7 +107,7 @@ public class Tutoriel : MonoBehaviour
             // Faire disparaitre après quelques secondes
             StopAllCoroutines();
             StartCoroutine(DisparitionTel(0));
-
+            
         }
 
     }
@@ -224,7 +218,7 @@ public class Tutoriel : MonoBehaviour
     public void TutoNuage()
     {
         //Debug.Log("TutoNuage");
-        if (tuto == 2) StartCoroutine(PickNuageTuto());
+        if(tuto == 2) StartCoroutine(PickNuageTuto());
     }
 
     public IEnumerator PickNuageTuto()
@@ -279,13 +273,13 @@ public class Tutoriel : MonoBehaviour
         bouleB.GetComponent<Animator>().Play("tourne");
         BouleBAudio.PlayOneShot(_audioClips[12]);
         while (BouleBAudio.isPlaying) yield return null;
-        bouleB.GetComponent<Animator>().Play("flotte");
+        bouleB.GetComponent<Animator>().Play("flotte");  
         tuto = 4;
     }
     public void SablierTuto()
     {
         Debug.Log("TutoSablier");
-        if (tuto == 4) StartCoroutine(PickSablierTuto());
+        if (tuto==4) StartCoroutine(PickSablierTuto());
 
     }
     public IEnumerator PickSablierTuto()
@@ -397,7 +391,7 @@ public class Tutoriel : MonoBehaviour
         DisparitionBoules();
     }
 
-
+   
 
     public IEnumerator TropBonheur()
     {
@@ -434,7 +428,7 @@ public class Tutoriel : MonoBehaviour
             BMParle();
             BouleMAudio.PlayOneShot(_audioClips[29]);
             while (BouleMAudio.isPlaying) yield return null;
-
+           
         }
 
         bouleM.GetComponent<Animator>().Play("flotte");
@@ -456,8 +450,8 @@ public class Tutoriel : MonoBehaviour
         BouleBAudio.Stop();
         DisparitionBoules();
         StopGame();
-        // SI JOUEUR DECROCHE StartCoroutine(FIN());
-    }
+       // SI JOUEUR DECROCHE StartCoroutine(FIN());
+    }  
 
     //A FAIRE APPARAITRE A LA TOMBEE DE LA NUIT LE DERNIER JOUR 
     public IEnumerator DernierJour()
@@ -465,55 +459,55 @@ public class Tutoriel : MonoBehaviour
         tuto = 6;
         TempleScript.instance.gameObject.GetComponent<YogaScript>().activate_yoga_hand(0, false);
         Time.timeScale = 1;
-        // ApparitionBoules();
-        // if (TempleScript.village_terror < 50 && TempleScript.essence_num >= 100000) cas = 1;
-        // if (TempleScript.village_terror >= 50 && TempleScript.essence_num >= 100000) cas = 2;
-        // if (TempleScript.village_terror < 50 && TempleScript.essence_num < 100000) cas = 3;
-        // if (TempleScript.village_terror >= 50 && TempleScript.essence_num < 100000) cas = 4;
-        // BouleBAudio.Stop();
-        // BouleMAudio.Stop();
+       // ApparitionBoules();
+       // if (TempleScript.village_terror < 50 && TempleScript.essence_num >= 100000) cas = 1;
+       // if (TempleScript.village_terror >= 50 && TempleScript.essence_num >= 100000) cas = 2;
+       // if (TempleScript.village_terror < 50 && TempleScript.essence_num < 100000) cas = 3;
+       // if (TempleScript.village_terror >= 50 && TempleScript.essence_num < 100000) cas = 4;
+       // BouleBAudio.Stop();
+       // BouleMAudio.Stop();
 
-        // //if dernier jour cas 1
-        // if (cas == 1)
-        // {
-        //     BouleBAudio.PlayOneShot(_audioClips[33]);
-        //     while (BouleBAudio.isPlaying) yield return null;
-        //     BouleMAudio.PlayOneShot(_audioClips[34]);
-        //     while (BouleMAudio.isPlaying) yield return null;
-        // }
-        // //if dernier jour cas 2
-        // if(cas == 2)
-        // {
-        //     BouleMAudio.PlayOneShot(_audioClips[35]);
-        //     while (BouleMAudio.isPlaying) yield return null;
-        //     BouleBAudio.PlayOneShot(_audioClips[36]);
-        //     while (BouleBAudio.isPlaying) yield return null;
-        //     BouleMAudio.PlayOneShot(_audioClips[37]);
-        //     while (BouleMAudio.isPlaying) yield return null;
-        // }
-        // //if dernier jour cas 3
-        // if (cas == 3)
-        // {
-        //     BouleBAudio.PlayOneShot(_audioClips[38]);
-        //     while (BouleBAudio.isPlaying) yield return null;
-        //     BouleMAudio.PlayOneShot(_audioClips[39]);
-        //     while (BouleMAudio.isPlaying) yield return null;
-        // }
-        // //if dernier jour cas 4
-        //if (cas == 4)
-        // {
-        //     BouleMAudio.PlayOneShot(_audioClips[40]);
-        //     while (BouleMAudio.isPlaying) yield return null;
-        //     BouleBAudio.PlayOneShot(_audioClips[41]);
-        //     while (BouleBAudio.isPlaying) yield return null;
-        // }
+       // //if dernier jour cas 1
+       // if (cas == 1)
+       // {
+       //     BouleBAudio.PlayOneShot(_audioClips[33]);
+       //     while (BouleBAudio.isPlaying) yield return null;
+       //     BouleMAudio.PlayOneShot(_audioClips[34]);
+       //     while (BouleMAudio.isPlaying) yield return null;
+       // }
+       // //if dernier jour cas 2
+       // if(cas == 2)
+       // {
+       //     BouleMAudio.PlayOneShot(_audioClips[35]);
+       //     while (BouleMAudio.isPlaying) yield return null;
+       //     BouleBAudio.PlayOneShot(_audioClips[36]);
+       //     while (BouleBAudio.isPlaying) yield return null;
+       //     BouleMAudio.PlayOneShot(_audioClips[37]);
+       //     while (BouleMAudio.isPlaying) yield return null;
+       // }
+       // //if dernier jour cas 3
+       // if (cas == 3)
+       // {
+       //     BouleBAudio.PlayOneShot(_audioClips[38]);
+       //     while (BouleBAudio.isPlaying) yield return null;
+       //     BouleMAudio.PlayOneShot(_audioClips[39]);
+       //     while (BouleMAudio.isPlaying) yield return null;
+       // }
+       // //if dernier jour cas 4
+       //if (cas == 4)
+       // {
+       //     BouleMAudio.PlayOneShot(_audioClips[40]);
+       //     while (BouleMAudio.isPlaying) yield return null;
+       //     BouleBAudio.PlayOneShot(_audioClips[41]);
+       //     while (BouleBAudio.isPlaying) yield return null;
+       // }
 
         if (TempleScript.essence_num >= 100000) SetFinVictoire();
         else SetFinDefaite();
         yield return null;
     }
 
-
+    
     public void SetFinVictoire()
     {
         fin = 2;
@@ -545,7 +539,7 @@ public class Tutoriel : MonoBehaviour
         else if (fin == 3) TelAudio.PlayOneShot(_audioClips[43]); //voix telephone
 
         //Génération des commentaires aléatoires en fonction de l'alignement
-        if (TempleScript.village_terror < 30) IpadCommentaires.text = Commentaires[Random.Range(0, 22)];
+        if (TempleScript.village_terror < 30) IpadCommentaires.text = Commentaires[Random.Range(0,22)];
         else if (TempleScript.village_terror >= 30 && TempleScript.village_terror < 60) IpadCommentaires.text = Commentaires[Random.Range(23, 37)];
         else if (TempleScript.village_terror >= 60) IpadCommentaires.text = Commentaires[Random.Range(37, 65)];
 
@@ -584,7 +578,7 @@ public class Tutoriel : MonoBehaviour
         //menu qui s'affiche
         if (fin == 1 | fin == 3) Ecran.GetComponent<MeshRenderer>().material = Defaite;
         if (fin == 2) Ecran.GetComponent<MeshRenderer>().material = Victoire;
-        while (TimeMenu < 5)
+        while (TimeMenu <5)
         {
             TimeMenu++;
             yield return new WaitForSeconds(5);

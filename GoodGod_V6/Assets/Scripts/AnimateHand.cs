@@ -184,6 +184,7 @@ public class AnimateHand : MonoBehaviour
             //poing gauche fermé
             RPoingFerme = true;
         }
+        else RPoingFerme = false;
 
         /*
         if (Events_manager.EventInProgress == false)
@@ -223,7 +224,7 @@ public class AnimateHand : MonoBehaviour
             //poing gauche fermé
             LPoingFerme = true;
         }
-
+        else LPoingFerme = false;
     }
 
 }
