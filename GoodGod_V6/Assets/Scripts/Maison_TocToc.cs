@@ -27,8 +27,11 @@ public class Maison_TocToc : MonoBehaviour
             TocAudio.Play();
             foreach (GameObject villager in this.GetComponent<HouseScript>().habitant)
             {
-                if(villager.GetComponent<VillagerScript>().is_sleeping)
+                if (villager.GetComponent<VillagerScript>().is_sleeping)
+                {
                     villager.GetComponent<VillagerScript>()._wakeup();
+                    TempleScript.instance.GetComponent<TempleScript>().village_terror = Mathf.Clamp(TempleScript.instance.village_terror + 3, 0, 100);
+                }
             }
 
         }
@@ -38,7 +41,10 @@ public class Maison_TocToc : MonoBehaviour
             foreach (GameObject villager in this.GetComponent<HouseScript>().habitant)
             {
                 if (villager.GetComponent<VillagerScript>().is_sleeping)
+                {
                     villager.GetComponent<VillagerScript>()._wakeup();
+                    TempleScript.instance.GetComponent<TempleScript>().village_terror = Mathf.Clamp(TempleScript.instance.village_terror + 3, 0, 100);
+                }
             }
         }
     }

@@ -19,6 +19,11 @@ public class Cristal_Collision : MonoBehaviour
     {
         BoomAudio = this.GetComponent<AudioSource>();
         temple = TempleScript.instance.gameObject;
+
+        this.GetComponent<Rigidbody>().velocity = new Vector3(0,-15f,0);
+        this.GetComponent<Rigidbody>().angularVelocity = new Vector3(Random.Range(-5,5), Random.Range(-5, 5), Random.Range(-5, 5));
+
+
     }
 
     // Update is called once per frame
@@ -177,6 +182,16 @@ public class Cristal_Collision : MonoBehaviour
 
 
     }
+
+    public void destroyed_mid_air()
+    {
+
+        GameObject clone = Instantiate(Impact, this.gameObject.transform.position, Quaternion.identity, TempleScript.instance.transform.parent);
+        clone.gameObject.GetComponent<Impact_disparition>()._is_destroyed_mid_air();
+        Destroy(this.gameObject);
+
+    }
+
 
     
 }

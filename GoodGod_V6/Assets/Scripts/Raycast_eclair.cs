@@ -51,7 +51,6 @@ public class Raycast_eclair : MonoBehaviour
                 {
                     RaycastHit hit = first_hits[i];
 
-                    Debug.Log("raycasteclair");
                     hit.collider.transform.parent.GetComponent<VillagerScript>()._awareness_trigger(second_hit.point,true);
                     
 
@@ -83,7 +82,8 @@ public class Raycast_eclair : MonoBehaviour
                 PositionEclair = hitEclair.collider.gameObject.transform.position;
                 boom.transform.position = PositionEclair;
                 boom.Play();
-                Destroy(hitEclair.collider.gameObject);
+                hitEclair.collider.gameObject.GetComponent<Cristal_Collision>().destroyed_mid_air();
+                //Destroy(hitEclair.collider.gameObject);
 
             }
 

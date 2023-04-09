@@ -642,6 +642,7 @@ public IEnumerator TimerPickNuage(float time)
         TempleScript.instance.transform.parent.gameObject.SetActive(false);
         //Time.timeScale = 0;
         Tel.gameObject.SetActive(true);
+        Tel.gameObject.GetComponent<respawnObject>().Respawn();
         TelAudio.PlayOneShot(_audioClips[44]); //a remplacer par la sonnerie       
     }
 

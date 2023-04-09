@@ -7,6 +7,9 @@ public class Impact_disparition : MonoBehaviour
 {
     public float timer;
     // Start is called before the first frame update
+    [SerializeField] GameObject smoke;
+
+
     void Start()
     {
         StartCoroutine(AdieuImpact());
@@ -27,4 +30,12 @@ public class Impact_disparition : MonoBehaviour
         }
        Destroy(this.gameObject);
     }
+
+    public void _is_destroyed_mid_air()
+    {
+        smoke.SetActive(false);
+        this.GetComponent<MeshRenderer>().enabled = false;
+
+    }
+
 }
