@@ -36,17 +36,6 @@ public class XR_interaction : MonoBehaviour
 
         inputs_action = new XRIDefaultInputActions();
 
-
-
-        //right_hand_trigger = inputs_action.XRIRightHandInteraction.ActivateValue;
-        //left_hand_trigger = inputs_action.XRILeftHandInteraction.ActivateValue;
-
-    }
-
-    void Start()
-    {
-
-
         inputs_action.Enable();
 
 
@@ -58,7 +47,7 @@ public class XR_interaction : MonoBehaviour
         inputs_action.XRBUTTONS.B.canceled += B_deactivate;
 
 
-        inputs_action.XRBUTTONS.MENU.started+= menu_start;
+        inputs_action.XRBUTTONS.MENU.started += menu_start;
         //inputs_action.XRBUTTONS.MENU.canceled += menu_cancel;
 
         inputs_action.XRIRightHandLocomotion.Move.performed += R_stick_perform;
@@ -72,6 +61,18 @@ public class XR_interaction : MonoBehaviour
 
         //inputs_action.XRIRightHandInteraction.ActivateValue.performed += R_Trigger_valued;
         //inputs_action.XRILeftHandInteraction.ActivateValue.performed += L_Trigger_valued;
+
+
+        //right_hand_trigger = inputs_action.XRIRightHandInteraction.ActivateValue;
+        //left_hand_trigger = inputs_action.XRILeftHandInteraction.ActivateValue;
+
+    }
+
+    void Start()
+    {
+
+
+
 
     }
 
