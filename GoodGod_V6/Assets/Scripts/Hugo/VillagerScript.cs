@@ -596,13 +596,11 @@ public class VillagerScript : MonoBehaviour
             go_build_target = null;
         }
 
-        Debug.Log("peur");
 
         animator.Play("PNJ_rig_Peur");
 
         Debug.DrawLine(new Vector3(point.x, point.y, point.z), new Vector3(this.transform.position.x, point.y, this.transform.position.z), Color.red,5f);
 
-        Debug.Log(Mathf.Clamp(Temple.GetComponent<TempleScript>().village_terror + (100f / Temple.GetComponent<TempleScript>().current_population),0,100));
 
         if (is_working == false)
             Temple.GetComponent<TempleScript>().village_terror = Mathf.Clamp(Temple.GetComponent<TempleScript>().village_terror + (100f / Temple.GetComponent<TempleScript>().current_population),0,100);
@@ -770,7 +768,9 @@ public class VillagerScript : MonoBehaviour
 
         //path_complete = false;
 
-        StopAllCoroutines();
+        StopCoroutine(idle());
+        StopCoroutine(watch_for_ressources());
+
         is_dancing = false;
 
         if (go_build_target != null)
@@ -982,6 +982,7 @@ public class VillagerScript : MonoBehaviour
 
         if(boost <= 1.03f)
         {
+            Debug.Log("start");
             StartCoroutine(boost_effect());
         }
 ;
@@ -997,12 +998,10 @@ public class VillagerScript : MonoBehaviour
     IEnumerator boost_effect()
     {
 
-
         while (boost > 1)
         {
-            boost -= 0.001f;
+            boost -= 0.0002f;
 
-            //Debug.Log(boost);
 
             animator.speed = boost;
             NavMeshAgent.speed = 3.5f * boost;
@@ -1014,7 +1013,8 @@ public class VillagerScript : MonoBehaviour
 
         }
 
-        this.GetComponent<bonhomme_boost>().update_boost_render(0);
+
+        this.GetComponent<bonhomme_boost>().disable_boost_render();
         boost = 1;
         animator.speed = 1;
         NavMeshAgent.speed = 3.5f;
