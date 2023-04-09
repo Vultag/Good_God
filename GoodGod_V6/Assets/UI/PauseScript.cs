@@ -15,6 +15,7 @@ public class PauseScript : MonoBehaviour
 
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (gameIsPaused)
@@ -28,13 +29,17 @@ public class PauseScript : MonoBehaviour
                 Pause();
             }
         }
+        */
     }
+    /*
     public void ContinuerLaPartie()
     {
+        Debug.Log("continue");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
     }
+    
     void Pause()
     {
         pauseMenuUI.SetActive(true);
@@ -42,6 +47,7 @@ public class PauseScript : MonoBehaviour
         //AudioManager.Instance.musicSource.Stop();
         gameIsPaused = true;
     }
+    */
     public void Reglages()
     {
         reglageMenu.SetActive(true);
@@ -76,9 +82,11 @@ public class PauseScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
+    
     public void Retour()
     {
-        Pause();
+        //Pause();
+        pauseMenuUI.SetActive(true);
         QuitterReglage();
         QuitterControl();
     }

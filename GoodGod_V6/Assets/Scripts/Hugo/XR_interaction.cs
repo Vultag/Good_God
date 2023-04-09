@@ -12,6 +12,8 @@ public class XR_interaction : MonoBehaviour
 
     XRIDefaultInputActions inputs_action;
 
+    [SerializeField] GameObject interaction_manager;
+
     public XR_drag_system drag_system;
 
     [SerializeField] GameObject Menu;
@@ -100,6 +102,7 @@ public class XR_interaction : MonoBehaviour
     {
         if (!pause)
         {
+            interaction_manager.SetActive(false);
             XR_ray.SetActive(true);
             Time.timeScale = 0;
             Menu.SetActive(true);
@@ -107,19 +110,20 @@ public class XR_interaction : MonoBehaviour
         }
         else
         {
+            interaction_manager.SetActive(true);
             XR_ray.SetActive(false);
             Time.timeScale = 1;
             Menu.SetActive(false);
             pause = false;
         }
     }
-    
+    /*
     private void menu_cancel(CallbackContext obj)
     {
         Time.timeScale = 1;
         Menu.SetActive(false);
     }
-
+    */
     private void R_stick_perform(CallbackContext obj)
     {
         //Debug.Log(obj.ReadValue<Vector2>());

@@ -112,6 +112,8 @@ public class TempleScript : MonoBehaviour
 
     public static TempleScript instance;
 
+
+
     private void Awake()
     {
 
