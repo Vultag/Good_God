@@ -119,6 +119,7 @@ public class Tutoriel : MonoBehaviour
     {
         //FIN TUTO
         TelAudio.Stop();
+        DisparitionBoules();
         if (fin == 0)
         {
             tuto = 6;
