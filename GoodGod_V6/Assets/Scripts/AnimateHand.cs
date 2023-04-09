@@ -27,19 +27,12 @@ public class AnimateHand : MonoBehaviour
 
         inputs_action = new XRIDefaultInputActions();
 
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        if(TempleScript.instance != null)
-            temple = TempleScript.instance.gameObject;
 
         Rtrigger = Mathf.Clamp(Rtrigger, 0, 1);
         Ltrigger = Mathf.Clamp(Ltrigger, 0, 1);
         Lgrab = Mathf.Clamp(Lgrab, 0, 1);
         Rgrab = Mathf.Clamp(Rgrab, 0, 1);
+
 
         inputs_action.Enable();
 
@@ -64,6 +57,17 @@ public class AnimateHand : MonoBehaviour
 
         inputs_action.XRBUTTONS.X.performed += Lance_eclair_performed_L;
         inputs_action.XRBUTTONS.A.performed += Lance_eclair_performed_R;
+
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+        if(TempleScript.instance != null)
+            temple = TempleScript.instance.gameObject;
+
+
     }
     private void OnDisable()
     {
