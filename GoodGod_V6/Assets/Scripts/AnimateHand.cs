@@ -85,6 +85,9 @@ public class AnimateHand : MonoBehaviour
 
         inputs_action.XRBUTTONS.X.performed -= Lance_eclair_performed_L;
         inputs_action.XRBUTTONS.A.performed -= Lance_eclair_performed_R;
+
+        inputs_action.Disable();
+
     }
 
     // Update is called once per frame

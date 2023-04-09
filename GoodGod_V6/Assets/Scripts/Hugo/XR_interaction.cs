@@ -87,6 +87,8 @@ public class XR_interaction : MonoBehaviour
 
         inputs_action.XRBUTTONS.MENU.started -= menu_start;
         inputs_action.XRIRightHandLocomotion.Move.performed -= R_stick_perform;
+
+        inputs_action.Disable();
     }
 
     private void menu_start(CallbackContext obj)
