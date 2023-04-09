@@ -2156,6 +2156,7 @@ GameObject:
   - component: {fileID: 8057712385531747122}
   - component: {fileID: 1689172421731458046}
   - component: {fileID: 8971589745223807606}
+  - component: {fileID: 3108506026187419259}
   m_Layer: 9
   m_Name: body
   m_TagString: Villager
@@ -2267,6 +2268,7 @@ MonoBehaviour:
   is_looking_for_ressouce: 0
   is_looking_to_unload: 0
   target_ressource: {fileID: 0}
+  Desintegre: {fileID: 3108506026187419259}
   mesh: {fileID: 8301805205994130994}
 --- !u!95 &3513403783256066235
 Animator:
@@ -2505,8 +2507,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blood_prefab: {fileID: 4804437626855143110, guid: 09564e2fc5a9b5748b485e33b05955a9,
     type: 3}
-  dead_mat: {fileID: 2100000, guid: 80f0823874527f14983a8f99284fda60, type: 2}
+  dead_mat:
+  - {fileID: 2100000, guid: 920dcea5534204b4e8d6d27164daeec1, type: 2}
   sol: {fileID: 0}
+--- !u!114 &3108506026187419259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7794938896688076275}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 572cbc2958924974cbd0cce950000820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dissolve: 0
+  deform: 0
+  rend: {fileID: 0}
+  Mesh: {fileID: 8301805205994130994}
 --- !u!1 &7794938897300500931
 GameObject:
   m_ObjectHideFlags: 0

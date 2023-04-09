@@ -8,7 +8,7 @@ public class VillagerListenToCollision : MonoBehaviour
 
     //private bool is_dead = false;
     [SerializeField] private GameObject blood_prefab;
-    [SerializeField] public Material dead_mat;
+    [SerializeField] public Material[] dead_mat;
 
     [SerializeField] private GameObject sol;
 

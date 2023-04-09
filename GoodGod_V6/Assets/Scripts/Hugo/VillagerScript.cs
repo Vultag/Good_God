@@ -45,15 +45,13 @@ public class VillagerScript : MonoBehaviour
     [HideInInspector] public bool is_looking_to_unload = false;
 
     [HideInInspector] public GameObject target_ressource;
-
+    public Desintegration Desintegre;
     private Tutoriel tutoriel;
     public GameObject mesh;
 
-
-
     void Start()
     {
-
+        Desintegre.enabled = false;
         sol = TempleScript.instance.sol;
 
         Physics.IgnoreCollision(this.GetComponent<CapsuleCollider>(), sol.GetComponent<MeshCollider>());
@@ -725,7 +723,8 @@ public class VillagerScript : MonoBehaviour
                 Temple.GetComponent<TempleScript>().working_workers.Remove(this.gameObject);
             }
 
-            mesh.GetComponent<Renderer>().material = this.GetComponent<VillagerListenToCollision>().dead_mat;
+            mesh.GetComponent<Renderer>().materials = this.GetComponent<VillagerListenToCollision>().dead_mat;
+            Desintegre.enabled = true;
 
             Temple.GetComponent<TempleScript>().current_population--;
 

@@ -6,28 +6,36 @@ public class Desintegration : MonoBehaviour
 {
     public float dissolve, deform;
     public Renderer rend;
+    public GameObject Mesh;
 
     // Start is called before the first frame update
     void Start()
     {
-        rend = GetComponent<Renderer>();
+        rend = Mesh.GetComponent<Renderer>();
         dissolve = Mathf.Clamp(-1f, -1f, 1);
-        deform = Mathf.Clamp(0, 0, 50);
+        StartCoroutine(DissolveTimer());
         // Use the Specular shader on the material
         //rend.material.shader = Shader.Find("dissolve");
 
     }
 
     // Update is called once per frame
-    void Update()
+  
+
+    public IEnumerator DissolveTimer()
     {
-        if (dissolve < 1)
+        //while (time > 0)
+        //{
+        //    time--;
+        //    yield return new WaitForSeconds(2);
+        //}
+        yield return new WaitForSeconds(1);
+        while (dissolve < 1)
         {
-            dissolve += Time.deltaTime;
-            deform += Time.deltaTime;
+            dissolve += 0.6f*Time.deltaTime;
+            rend.material.SetFloat("_dissolve", dissolve);
+            yield return new WaitForFixedUpdate();
         }
-        
-        rend.material.SetFloat("_dissolve", dissolve);
-        rend.material.SetFloat("_deformation", deform);
+
     }
 }

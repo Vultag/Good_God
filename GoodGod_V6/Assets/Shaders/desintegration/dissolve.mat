@@ -38,15 +38,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _ImageBaseCol:
-        m_Texture: {fileID: 2800000, guid: 73b10229f7b4d93499aa0370176cd63e, type: 3}
+        m_Texture: {fileID: 2800000, guid: d260b127f494924468ede3b2d1df5b67, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ImgEmission:
-        m_Texture: {fileID: 2800000, guid: 780b4573109b16f4884e92ff4976708c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 70ff746305ff00748889340cdc2f3961, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ImgMetallic:
-        m_Texture: {fileID: 2800000, guid: 0e33bb19a9f258648acb3b873ebea025, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4a3fa6b648de0b742acd04c041d0e426, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ImgNormal:
@@ -71,17 +71,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AO: 1
+    - _AO: 0.45
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _deformation: 0.01
-    - _dissolve: -1.06
+    - _deformation: 0.03
+    - _dissolve: -1.14
     - _intensit: 0.07
-    - _smooth: 0.01
-    - _taille_dissolve: 47.57
-    - _vitesse: 0
+    - _smooth: 0.5
+    - _taille_dissolve: 45
+    - _vitesse: 0.8
     m_Colors:
-    - _Color: {r: 4.269324, g: 0, b: 4.0905037, a: 0}
-    - _base_color: {r: 0, g: 0, b: 0, a: 0}
-    - _color2: {r: 0, g: 1.3176471, b: 16, a: 0}
+    - _Color: {r: 1.1666814, g: 0, b: 5.656854, a: 0}
+    - _base_color: {r: 2.6390157, g: 2.6390157, b: 2.6390157, a: 0}
+    - _color2: {r: 0, g: 0.8022285, b: 2.297397, a: 0}
   m_BuildTextureStacks: []
