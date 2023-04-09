@@ -41,16 +41,6 @@ public class inputs_tuto_detection : MonoBehaviour
 
         inputs_action = new XRIDefaultInputActions();
 
-    }
-
-    void Start()
-    {
-
-
-        Rtrigger = Mathf.Clamp(Rtrigger, 0, 1);
-        Ltrigger = Mathf.Clamp(Ltrigger, 0, 1);
-        Lgrab = Mathf.Clamp(Lgrab, 0, 1);
-        Rgrab = Mathf.Clamp(Rgrab, 0, 1);
 
         inputs_action.Enable();
 
@@ -84,8 +74,46 @@ public class inputs_tuto_detection : MonoBehaviour
 
         inputs_action.XRBUTTONS.X.performed += Lance_eclair_performed_L;
         inputs_action.XRBUTTONS.A.performed += Lance_eclair_performed_R;
+
     }
 
+    void Start()
+    {
+
+
+        Rtrigger = Mathf.Clamp(Rtrigger, 0, 1);
+        Ltrigger = Mathf.Clamp(Ltrigger, 0, 1);
+        Lgrab = Mathf.Clamp(Lgrab, 0, 1);
+        Rgrab = Mathf.Clamp(Rgrab, 0, 1);
+
+    }
+
+
+
+    private void OnDisable()
+    {
+        inputs_action.XRBUTTONS.Y.started -= Y_activate;
+
+        inputs_action.XRBUTTONS.B.started -= B_activate;
+
+        inputs_action.XRBUTTONS.MENU.started -= menu_start;
+
+        inputs_action.XRIRightHandLocomotion.Move.performed -= R_stick_perform;
+
+        inputs_action.XRIRightHandInteraction.Activate.started -= R_Trigger_activate;
+        inputs_action.XRIRightHandInteraction.Activate.canceled -= R_Trigger_deactivate;
+        inputs_action.XRIRightHandInteraction.ActivateValue.performed += R_Trigger_performed;
+
+        inputs_action.XRILeftHandInteraction.Activate.started -= L_Trigger_activate;
+        inputs_action.XRILeftHandInteraction.Activate.canceled -= L_Trigger_deactivate;
+        inputs_action.XRILeftHandInteraction.ActivateValue.performed -= L_Trigger_performed;
+
+        inputs_action.XRIRightHandInteraction.SelectValue.performed -= R_Trigger_performed;
+        inputs_action.XRILeftHandInteraction.SelectValue.performed -= L_Trigger_performed;
+
+        inputs_action.XRBUTTONS.X.performed -= Lance_eclair_performed_L;
+        inputs_action.XRBUTTONS.A.performed -= Lance_eclair_performed_R;
+    }
 
 
     private void Y_activate(CallbackContext obj)

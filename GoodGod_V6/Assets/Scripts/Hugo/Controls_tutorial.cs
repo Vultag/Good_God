@@ -57,7 +57,7 @@ public class Controls_tutorial : MonoBehaviour
             control_tuto_EN_gb.SetActive(true);
         }
 
-
+        XR_ray.SetActive(false);
         XR_interaction.SetActive(true);
 
     }
