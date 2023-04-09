@@ -258,7 +258,7 @@ public class inputs_tuto_detection : MonoBehaviour
 
     public void tuto_input_check(string action)
     {
-
+        
         switch (action)
         {
             case "move":

@@ -195,10 +195,10 @@ public class AnimateHand : MonoBehaviour
     {
 
         Rtrigger = RpinchAnimationAction.action.ReadValue<float>();
-        RhandAnimator.SetFloat("Trigger", Rtrigger);
+        if(RhandAnimator != null) RhandAnimator.SetFloat("Trigger", Rtrigger);
 
         Rgrab = RgripAnimationAction.action.ReadValue<float>();
-        RhandAnimator.SetFloat("Grip", Rgrab);
+        if (LhandAnimator != null) RhandAnimator.SetFloat("Grip", Rgrab);
 
         if (Rtrigger > 0.9f && Rgrab > 0.9f)
         {
