@@ -73,5 +73,16 @@ public class bonhomme_boost : MonoBehaviour
 
     }
 
+    public void disable_boost_render()
+    {
+        brille = 0;
+
+        brilleMat = Mec.GetComponent<Renderer>().materials[0];
+        brilleMat.SetFloat("_alpha", -1);
+        brilleMat.SetFloat("_contour", 1.6f);
+
+    }
+
+
 
 }

@@ -30,6 +30,11 @@ public class Tutoriel : MonoBehaviour
     private string[] Commentaires;
     public TextMeshProUGUI IpadCommentaires;
 
+    [SerializeField] AudioSource musique;
+    [SerializeField] AudioSource ambiance;
+
+    [HideInInspector] public bool monologue_actif = false;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -106,6 +111,7 @@ public class Tutoriel : MonoBehaviour
         {
             TelAudio.Stop();
             StartCoroutine(DebutTelephone());
+            monologue_actif = true;
 
         }
         else if (fin > 0 && Finjeu == false)
@@ -174,6 +180,7 @@ public class Tutoriel : MonoBehaviour
         tuto = 1;
         TelAudio.PlayOneShot(_audioClips[0]); //voix telephone
         while (TelAudio.isPlaying) yield return null;
+        monologue_actif = false;
         yield return new WaitForSeconds(2f);
 
         //boules apparaissent
@@ -626,6 +633,9 @@ public IEnumerator TimerPickNuage(float time)
     public void StopGame()
     {
         Debug.Log("FIN DU JEU");
+
+        musique.Stop();
+        ambiance.Stop();
 
         Helium_fin_text.text = TempleScript.instance.essence_num.ToString();
 

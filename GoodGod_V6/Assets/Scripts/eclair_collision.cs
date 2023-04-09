@@ -33,7 +33,47 @@ public class eclair_collision : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
 
-        //Debug.Log(other.gameObject.name,gameObject);
+
+        RaycastHit[] first_hits;
+
+        first_hits = Physics.RaycastAll(transform.position, Vector3.down, 1000, LayerMask.GetMask("awareness"));
+
+
+
+        if (first_hits.Length > 0)
+        {
+
+            RaycastHit second_hit;
+
+
+            if (Physics.Raycast(transform.position, Vector3.down, out second_hit, 10000, (LayerMask.GetMask("Villager") | LayerMask.GetMask("Default"))))
+            {
+
+                //Debug.Log(second_hit.collider.tag);
+
+
+                for (int i = 0; i < first_hits.Length; i++)
+                {
+                    RaycastHit hit = first_hits[i];
+
+                    hit.collider.transform.parent.GetComponent<VillagerScript>()._awareness_trigger(second_hit.point, false);
+
+
+                }
+
+                if (second_hit.collider.tag == "Villager" | second_hit.collider.tag == "Worker")
+                {
+
+                    second_hit.collider.GetComponent<VillagerScript>().mesh.SetActive(true);
+                    second_hit.collider.GetComponent<VillagerScript>().die();
+                }
+
+
+
+
+
+            }
+        }
 
 
         //if (has_hit == false)
@@ -103,7 +143,7 @@ public class eclair_collision : MonoBehaviour
                     if (villager.GetComponent<VillagerScript>().is_dancing)
                     {
                         Debug.Log("eclair");
-                        villager.GetComponent<VillagerScript>()._awareness_trigger(temple.GetComponent<TempleScript>().DiscoGB.transform.position);
+                        villager.GetComponent<VillagerScript>()._awareness_trigger(temple.GetComponent<TempleScript>().DiscoGB.transform.position, false);
                     }
                 }
 

@@ -112,6 +112,8 @@ public class TempleScript : MonoBehaviour
 
     public static TempleScript instance;
 
+
+
     private void Awake()
     {
 
@@ -390,7 +392,7 @@ public class TempleScript : MonoBehaviour
 
                 int pos_id = Random.Range(0, building_row_0_free.Count);
 
-                Debug.Log(building_row_0[building_row_0_free[pos_id]], gameObject);
+                //Debug.Log(building_row_0[building_row_0_free[pos_id]], gameObject);
 
                 if (building_row_0[building_row_0_free[pos_id]].transform.childCount>0)
                     Destroy(building_row_0[building_row_0_free[pos_id]].transform.GetChild(0).gameObject);
@@ -514,7 +516,8 @@ public class TempleScript : MonoBehaviour
             if (!villager.GetComponent<VillagerScript>().is_dancing && !villager.GetComponent<VillagerScript>().is_grabbed)
             {
                 villager.GetComponent<VillagerScript>().targetGB.SetActive(false);
-                villager.GetComponent<VillagerScript>().StopAllCoroutines();
+                villager.GetComponent<VillagerScript>().StopCoroutine("idle");
+                villager.GetComponent<VillagerScript>().StopCoroutine("watch_for_ressources");
                 villager.GetComponent<VillagerScript>().go_build(building_que[0]);
             }
         }
@@ -1038,6 +1041,8 @@ public class TempleScript : MonoBehaviour
             {
 
                 new_dancer.GetComponent<VillagerScript>().StopAllCoroutines();
+                new_dancer.GetComponent<VillagerScript>().StopCoroutine("idle");
+                new_dancer.GetComponent<VillagerScript>().StopCoroutine("watch_for_ressources");
                 new_dancer.GetComponent<VillagerScript>().path_complete = true;
                 new_dancer.GetComponent<VillagerScript>().is_dancing = true;
                 new_dancer.GetComponent<VillagerScript>().chill_out();
