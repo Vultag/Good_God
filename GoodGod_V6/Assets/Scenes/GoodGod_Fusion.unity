@@ -24834,6 +24834,9 @@ MonoBehaviour:
   - 'A bloodthirsty god who doesn''t even deserve the title of god. I strongly advise
     against it.  '
   IpadCommentaires: {fileID: 796425450}
+  musique: {fileID: 1474202523}
+  ambiance: {fileID: 333477623}
+  monologue_actif: 0
 --- !u!82 &2035915452
 AudioSource:
   m_ObjectHideFlags: 0

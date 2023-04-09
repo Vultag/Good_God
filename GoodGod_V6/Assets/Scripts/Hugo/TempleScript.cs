@@ -392,7 +392,7 @@ public class TempleScript : MonoBehaviour
 
                 int pos_id = Random.Range(0, building_row_0_free.Count);
 
-                Debug.Log(building_row_0[building_row_0_free[pos_id]], gameObject);
+                //Debug.Log(building_row_0[building_row_0_free[pos_id]], gameObject);
 
                 if (building_row_0[building_row_0_free[pos_id]].transform.childCount>0)
                     Destroy(building_row_0[building_row_0_free[pos_id]].transform.GetChild(0).gameObject);

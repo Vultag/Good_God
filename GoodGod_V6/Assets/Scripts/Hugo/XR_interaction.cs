@@ -74,8 +74,6 @@ public class XR_interaction : MonoBehaviour
     {
 
 
-
-
     }
 
     private void OnDisable()
