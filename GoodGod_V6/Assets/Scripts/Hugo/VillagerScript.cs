@@ -577,7 +577,7 @@ public class VillagerScript : MonoBehaviour
 
     }
 
-    public void _awareness_trigger(Vector3 point)
+    public void _awareness_trigger(Vector3 point,bool evil)
     {
 
         mesh.SetActive(true);
@@ -601,12 +601,13 @@ public class VillagerScript : MonoBehaviour
 
         Debug.DrawLine(new Vector3(point.x, point.y, point.z), new Vector3(this.transform.position.x, point.y, this.transform.position.z), Color.red,5f);
 
-
-        if (is_working == false)
-            Temple.GetComponent<TempleScript>().village_terror = Mathf.Clamp(Temple.GetComponent<TempleScript>().village_terror + (100f / Temple.GetComponent<TempleScript>().current_population),0,100);
-        else
-            Temple.GetComponent<TempleScript>().village_terror = Mathf.Clamp(Temple.GetComponent<TempleScript>().village_terror + (30f / Temple.GetComponent<TempleScript>().current_population), 0, 100);
-
+        if (evil)
+        {
+            if (is_working == false)
+                Temple.GetComponent<TempleScript>().village_terror = Mathf.Clamp(Temple.GetComponent<TempleScript>().village_terror + (100f / Temple.GetComponent<TempleScript>().current_population), 0, 100);
+            else
+                Temple.GetComponent<TempleScript>().village_terror = Mathf.Clamp(Temple.GetComponent<TempleScript>().village_terror + (30f / Temple.GetComponent<TempleScript>().current_population), 0, 100);
+        }
         is_terrified = true;
 
         //NavMeshAgent.destination = Quaternion.Euler(0, Random.Range(0, 360), 0) * new Vector3(this.transform.position.x + 12f - Vector3.Distance(new Vector3(point.x, 0, point.z), new Vector3(this.transform.position.x, 0, this.transform.position.z)), Temple.transform.position.y, 0);//targetGB.transform.position;

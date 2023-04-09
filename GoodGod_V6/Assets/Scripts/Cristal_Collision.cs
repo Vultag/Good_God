@@ -31,7 +31,25 @@ public class Cristal_Collision : MonoBehaviour
     {
 
         //Debug.Log(collision.collider.gameObject.name, gameObject);
+        RaycastHit[] first_hits;
 
+        first_hits = Physics.RaycastAll(transform.position, Vector3.down, 1000, LayerMask.GetMask("awareness"));
+
+
+
+        if (first_hits.Length > 0)
+        {
+
+            for (int i = 0; i < first_hits.Length; i++)
+            {
+                RaycastHit hit = first_hits[i];
+
+                hit.collider.transform.parent.GetComponent<VillagerScript>()._awareness_trigger(this.transform.position,false);
+
+
+            }
+
+        }
 
 
         if (collision.collider.tag == "Villager")
@@ -133,7 +151,7 @@ public class Cristal_Collision : MonoBehaviour
                     if (villager.GetComponent<VillagerScript>().is_dancing)
                     {
                         Debug.Log("crystal");
-                        villager.GetComponent<VillagerScript>()._awareness_trigger(collision.collider.transform.parent.parent.transform.position);
+                        villager.GetComponent<VillagerScript>()._awareness_trigger(collision.collider.transform.parent.parent.transform.position, false);
                     }
                 }
 

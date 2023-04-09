@@ -51,7 +51,8 @@ public class Raycast_eclair : MonoBehaviour
                 {
                     RaycastHit hit = first_hits[i];
 
-                    hit.collider.transform.parent.GetComponent<VillagerScript>()._awareness_trigger(second_hit.point);
+                    Debug.Log("raycasteclair");
+                    hit.collider.transform.parent.GetComponent<VillagerScript>()._awareness_trigger(second_hit.point,true);
                     
 
                 }

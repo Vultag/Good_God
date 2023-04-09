@@ -119,7 +119,7 @@ public class GhostHouseScript : MonoBehaviour
                 villager.GetComponent<VillagerScript>().go_build_target = null;
 
                 Debug.Log("house");
-                villager.GetComponent<VillagerScript>()._awareness_trigger(this.transform.position);
+                villager.GetComponent<VillagerScript>()._awareness_trigger(this.transform.position,false);
 
 
             }
