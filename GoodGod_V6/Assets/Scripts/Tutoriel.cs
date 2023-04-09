@@ -43,7 +43,9 @@ public class Tutoriel : MonoBehaviour
     void Start()
     {
 
-        if(GameManager.instance.GetComponent<GameManager>().Language == "FR")
+
+
+        if (GameManager.instance.GetComponent<GameManager>().Language == "FR")
         {
             Commentaires = Commentaires_FR;
             _audioClips = _audioClips_FR;
@@ -227,14 +229,28 @@ public class Tutoriel : MonoBehaviour
         }
         timetuto = 0f;
         bouleB.GetComponent<Animator>().Play("happy");
-
+        StartCoroutine(TimerPickNuage(10));
         tuto = 2;
+    }
+public IEnumerator TimerPickNuage(float time)
+    {
+        while(time >0)
+        {
+            time--;
+            yield return new WaitForSeconds(1);
+        }
+        TutoNuage();
+        yield return null;
     }
     //REMPLACER WAIT PAR LACTION DU JOUEUR
     public void TutoNuage()
     {
         //Debug.Log("TutoNuage");
-        if(tuto == 2) StartCoroutine(PickNuageTuto());
+        if (tuto == 2)
+        {
+            StopAllCoroutines();
+            StartCoroutine(PickNuageTuto());
+        }
     }
 
     public IEnumerator PickNuageTuto()

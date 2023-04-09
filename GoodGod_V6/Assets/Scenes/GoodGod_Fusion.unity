@@ -107781,7 +107781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12ab569f0c2b2242872629bfcc423f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XR_interaction: {fileID: 2001953874}
   NavSurface: {fileID: 6627470092230757886}
   NumberOfStartingHouse: 8
   SmallHousePrefab: {fileID: 8759946798471459579, guid: b009745833183964aa7a9aba2b43978e,
