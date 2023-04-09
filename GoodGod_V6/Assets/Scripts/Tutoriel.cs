@@ -49,7 +49,7 @@ public class Tutoriel : MonoBehaviour
     {
 
 
-
+        Time.timeScale = 1;
         if (GameManager.instance.GetComponent<GameManager>().Language == "FR")
         {
             Commentaires = Commentaires_FR;
