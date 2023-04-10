@@ -2543,11 +2543,12 @@ MonoBehaviour:
   VillagerSource: {fileID: 3475096368889281872}
   VillagerSounds:
   - {fileID: 8300000, guid: b5f1e3ade290bf54c886dee9a229e63b, type: 3}
+  - {fileID: 8300000, guid: 9b78c2410a9967246a1ad6dd257a1ffb, type: 3}
   - {fileID: 8300000, guid: 0aa1bc77461463e45bb8ed6d3ff6bf5a, type: 3}
   - {fileID: 8300000, guid: 78bfcd3792a3104439ed6f0c56138e51, type: 3}
   - {fileID: 8300000, guid: 5be678e1275a6bf489523073cc021445, type: 3}
-  - {fileID: 8300000, guid: 9b78c2410a9967246a1ad6dd257a1ffb, type: 3}
   - {fileID: 8300000, guid: 95034c31eb433424693b70ec19b603ae, type: 3}
+  - {fileID: 8300000, guid: 77b13da25f7a3ef48b807f51084f2691, type: 3}
 --- !u!82 &3475096368889281872
 AudioSource:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ public class Tutoriel : MonoBehaviour
     public TempleScript TempleScript;
     public SwitchSkybox Skybox;
     public bool Finjeu;
-    public Material Victoire, Defaite, MenuGenerique;
+    public Material Victoire_FR, Defaite_FR, Victoire_EN, Defaite_EN, MenuGenerique;
     [SerializeField] private TextMeshProUGUI Helium_fin_text;
     public string[] Commentaires_FR;
     public string[] Commentaires_EN;
@@ -662,8 +662,17 @@ public IEnumerator TimerPickNuage(float time)
     {
         IPad.gameObject.SetActive(true);
         //menu qui s'affiche
-        if (fin == 1 | fin == 3) Ecran.GetComponent<MeshRenderer>().material = Defaite;
-        if (fin == 2) Ecran.GetComponent<MeshRenderer>().material = Victoire;
+        if (GameManager.instance.Language == "FR")
+        {
+            if (fin == 1 | fin == 3) Ecran.GetComponent<MeshRenderer>().material = Defaite_FR;
+            if (fin == 2) Ecran.GetComponent<MeshRenderer>().material = Victoire_FR;
+        }
+        else
+        {
+            if (fin == 1 | fin == 3) Ecran.GetComponent<MeshRenderer>().material = Defaite_EN;
+            if (fin == 2) Ecran.GetComponent<MeshRenderer>().material = Victoire_EN;
+        }
+
         while (TimeMenu <5)
         {
             TimeMenu++;

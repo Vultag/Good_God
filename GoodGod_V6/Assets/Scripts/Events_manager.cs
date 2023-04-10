@@ -21,15 +21,24 @@ public class Events_manager : MonoBehaviour
     {
         EvNuages = 1666;
         EvCristaux = 166;
+
     }
     private void FixedUpdate()
     {
         randomNum1 = Random.Range(1, 10000);
         randomNum2 = Random.Range(1, 300);
         if(randomNum2 == 150 && tutoriel.fin == 0) UnCristal();
-        if (randomNum1 == EvCristaux && EventInProgress == false && tutoriel.tuto >= 6 && tutoriel.fin == 0 && !tutoriel.TOO_GOOD_in_progress) EventCristaux();
-        else if (randomNum1 == EvNuages && EventInProgress == false && tutoriel.tuto >= 6 && tutoriel.fin == 0 && !tutoriel.TOO_GOOD_in_progress) EventNuages();   
-      
+        if (randomNum1 == EvCristaux && EventInProgress == false && tutoriel.tuto >= 6 && tutoriel.fin == 0 && !tutoriel.TOO_GOOD_in_progress)
+        {
+            tutoriel.EVENT_in_progress = true;
+            EventCristaux();
+        }
+        else if (randomNum1 == EvNuages && EventInProgress == false && tutoriel.tuto >= 6 && tutoriel.fin == 0 && !tutoriel.TOO_GOOD_in_progress)
+        {
+            tutoriel.EVENT_in_progress = true;
+            EventNuages();
+        }
+
     }
      
     // Update is called once per frame
@@ -75,18 +84,18 @@ public class Events_manager : MonoBehaviour
     }
     public IEnumerator AppUnCristal()
     {
-        GameObject Cristaux = Instantiate(cristal, new Vector3(Random.Range(100f, -100f), Random.Range(80f, 300f), Random.Range(100f, -100f)), Quaternion.identity);
+        GameObject Cristaux = Instantiate(cristal, new Vector3(Random.Range(100f, -100f), Random.Range(250f, 400f), Random.Range(100f, -100f)), Quaternion.identity);
         yield return new WaitForSeconds(12f);
         Destroy(Cristaux);
     }
 
     public IEnumerator ApparitionCristaux()
     {
-        while (NbCristaux < 20)
+        while (NbCristaux < 40)
         {
-           Instantiate(cristal, new Vector3(Random.Range(100f, -100f), Random.Range(80f, 300f), Random.Range(100f, -100f)), Quaternion.identity);
+            Instantiate(cristal, new Vector3(Random.Range(100f, -100f), Random.Range(400f, 650f), Random.Range(100f, -100f)), Quaternion.identity);
             NbCristaux++;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(Random.Range(0.1f, 0.4f));
         }
         CristauxEvent = GameObject.FindGameObjectsWithTag("CristalEvent");
         yield return new WaitForSeconds(12f);
@@ -109,7 +118,8 @@ public class Events_manager : MonoBehaviour
         alpha = 1;
         Desastre = true;
         foreach (GameObject e in eclairs) e.gameObject.SetActive(true);
-        yield return new WaitForSeconds(15f);
+        //duree de l event ?
+        yield return new WaitForSeconds(30f);
         foreach (GameObject e in eclairs) e.gameObject.SetActive(false);
         while (alpha > 0)
         {

@@ -757,6 +757,7 @@ public class TempleScript : MonoBehaviour
         if (tutoriel.tuto == 6 && village_terror <= 0 && tutoriel.TOO_GOOD == false && disco_builed && !tutoriel.EVENT_in_progress)
         {
             tutoriel.TOO_GOOD = true;
+            tutoriel.TOO_GOOD_in_progress = true;
             tutoriel.StartCoroutine("TropBonheur");
         }
 

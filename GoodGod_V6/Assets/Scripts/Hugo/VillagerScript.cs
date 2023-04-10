@@ -114,6 +114,9 @@ public class VillagerScript : MonoBehaviour
 
         animator.Play("PNJ_rig|iddle");
 
+        if(Random.Range(0,2)>0)
+            this.GetComponent<Villager_sounds>().SonVillageoisHappy();
+
         yield return new WaitForSeconds(Random.Range(1, 7));
 
         
@@ -184,9 +187,11 @@ public class VillagerScript : MonoBehaviour
     public void target_reached()
     {
 
+        this.GetComponent<Villager_sounds>().StopSon();
+
         //mettre au propre si le temps c un enfer
 
-        if(is_terrified)
+        if (is_terrified)
         {
             _get_to_work();
             is_terrified = false;
@@ -277,6 +282,7 @@ public class VillagerScript : MonoBehaviour
     public IEnumerator dancing()
     {
 
+        this.GetComponent<Villager_sounds>().SonVillageoisDance();
 
         if (go_build_target)
         {
@@ -499,6 +505,11 @@ public class VillagerScript : MonoBehaviour
             if (target_ressource.tag == "Tree")
                 target_ressource.tag = "Tree_targeted";
 
+            this.GetComponent<Villager_sounds>().StopSon();
+            if (Random.Range(0, 2) > 0)
+                this.GetComponent<Villager_sounds>().SonVillageoisTriste();
+
+
             //is_looking_for_ressouce = false;
 
             //List<GameObject> other_workers = new List<GameObject>();
@@ -579,6 +590,8 @@ public class VillagerScript : MonoBehaviour
 
     public void _awareness_trigger(Vector3 point,bool evil)
     {
+
+        this.GetComponent<Villager_sounds>().SonVillageoisPeur();
 
         mesh.SetActive(true);
 
@@ -767,6 +780,8 @@ public class VillagerScript : MonoBehaviour
     public void get_ready_to_worship()
     {
 
+        this.GetComponent<Villager_sounds>().StopSon();
+
         //path_complete = false;
 
         StopCoroutine(idle());
@@ -814,7 +829,6 @@ public class VillagerScript : MonoBehaviour
 
     public void _sleep()
     {
-
 
         animator.Play("PNJ_rig_walk");
 
@@ -930,6 +944,8 @@ public class VillagerScript : MonoBehaviour
         if (state)
         {
 
+            this.GetComponent<Villager_sounds>().SonVillageoisPeur();
+
             path_complete = true;
 
             if (go_build_target != null)
@@ -1026,6 +1042,8 @@ public class VillagerScript : MonoBehaviour
 
     public void overdose()
     {
+
+        this.GetComponent<Villager_sounds>().SonVillageoisPeur();
 
         if (!is_dead)
         {
