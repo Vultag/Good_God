@@ -35,18 +35,23 @@ public class Pouvoir_pluie : MonoBehaviour
        
     }
 
+    /*
  public void Effets()
     {
         if(VieNuage >90) eclair.Play();
        else pluie.Play();
     }
-
+    */
 
     public void PressNuage()
     {
       
         Attrape = true;
-        StartCoroutine(Resapwn_cycle());
+        if (VieNuage < 90)
+        {
+            pluie.Play();
+            StartCoroutine(Resapwn_cycle());
+        }
         StartCoroutine(PresseNuage());
         
     }
@@ -54,6 +59,7 @@ public class Pouvoir_pluie : MonoBehaviour
     {
         Attrape = false;
         pluie.Stop();
+        eclair.Stop();
         // StopCoroutine(PresseNuage());
         StopCoroutine(Resapwn_cycle());
         StartCoroutine(ExitNuage());
@@ -79,16 +85,24 @@ public class Pouvoir_pluie : MonoBehaviour
     {
 
        
-            while (VieNuage < 150 && Attrape == true)
+            while (Attrape == true)
             {
-                DureeCouleur = VieNuage * 0.007f;
-                VieNuage += Time.deltaTime * 10f;
-                this.GetComponent<Renderer>().material.Lerp(MatBlanc, MatNoir, DureeCouleur);
+                if (VieNuage < 150)
+                {
+                    DureeCouleur = VieNuage * 0.007f;
+                    VieNuage += Time.deltaTime * 10f;
+                    this.GetComponent<Renderer>().material.Lerp(MatBlanc, MatNoir, DureeCouleur);
 
-               
-            scaleChange = Vector3.Lerp(this.transform.localScale, scaleMax, 0.1f);    
-         
-            this.transform.localScale = scaleChange;
+
+                    scaleChange = Vector3.Lerp(this.transform.localScale, scaleMax, 0.1f);
+
+                    this.transform.localScale = scaleChange;
+                }
+                else
+                {
+                    eclair.Play();
+                    yield break;
+                }
                 
 
                 yield return new WaitForSeconds(0.02f);

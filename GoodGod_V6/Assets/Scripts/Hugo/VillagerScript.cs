@@ -767,6 +767,8 @@ public class VillagerScript : MonoBehaviour
 
             Destroy(this.transform.parent.gameObject, 6f);
 
+            this.GetComponent<Villager_sounds>().StopSon();
+
             this.GetComponent<VillagerScript>().enabled = false;
         }
 
