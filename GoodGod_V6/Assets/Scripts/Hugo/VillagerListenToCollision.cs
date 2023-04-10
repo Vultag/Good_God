@@ -63,7 +63,6 @@ public class VillagerListenToCollision : MonoBehaviour
 
         if (other.tag == "LimiteCiel" && this.GetComponent<VillagerScript>().is_dead == false)
         {
-            this.GetComponent<VillagerScript>().is_dead = true;
             this.GetComponent<VillagerScript>().die();
         }
     }

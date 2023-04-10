@@ -18,18 +18,21 @@ public class Villager_sounds : MonoBehaviour
     {
         // a appeler quand il rentre dans la maison pour dormir
         VillagerSource.clip = VillagerSounds[5];
+        VillagerSource.PlayDelayed(Random.Range(1,5));
     }
 
     public void SonVillageoisPeur()
     {
         // Quand ils courent partout en hurlant
         VillagerSource.clip = VillagerSounds[Random.Range(1,3)];
+        VillagerSource.Play();
 
     }
     public void SonVillageoisGrabbed()
     {
         //Quand un jour le prend
         VillagerSource.clip = VillagerSounds[3];
+        VillagerSource.Play();
     }
     public void SonVillageoisOther()
     {

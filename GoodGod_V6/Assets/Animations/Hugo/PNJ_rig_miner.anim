@@ -33583,7 +33583,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 11.583333
+  - time: 11.5
     functionName: _ReturnToTemple
     data: 
     objectReferenceParameter: {fileID: 0}

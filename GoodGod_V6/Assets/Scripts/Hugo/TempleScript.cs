@@ -502,7 +502,7 @@ public class TempleScript : MonoBehaviour
 
         building_que.Add(new_disco);
 
-        tutoriel.TropBonheur();
+        //tutoriel.TropBonheur();
 
         _reorganize_builders();
 
@@ -549,6 +549,8 @@ public class TempleScript : MonoBehaviour
         { 
             DiscoGB = new_building;
             disco_builed = true;
+            tutoriel.plaisir = DiscoGB;
+            tutoriel.PlaisirPos();
             _disco_time();
         }
 
@@ -719,8 +721,12 @@ public class TempleScript : MonoBehaviour
         if (heures >= 24)
         {
             heures = heures - (24 * journees);
-            if (7 - journees == 0)
+            if (7 - journees == 0 && tutoriel.tuto == 6)
+            {
+                tutoriel.tuto = 7;
                 StartCoroutine(tutoriel.DernierJour());
+            }
+
         }
 
 
@@ -748,6 +754,12 @@ public class TempleScript : MonoBehaviour
     void _hour_passed()
     {
 
+        if (tutoriel.tuto == 6 && village_terror <= 0 && tutoriel.TOO_GOOD == false && disco_builed && !tutoriel.EVENT_in_progress)
+        {
+            tutoriel.TOO_GOOD = true;
+            tutoriel.StartCoroutine("TropBonheur");
+        }
+
         _reorganize_workers();
 
 
@@ -762,7 +774,11 @@ public class TempleScript : MonoBehaviour
         //_sleeping_time();
 
         if (heures == 18)
+        {
+            if (tutoriel.tuto == 5 && !tutoriel.TUTO_NUIT_in_progress)
+                tutoriel.StartCoroutine("TUTO_nuit");
             _worship_time();
+        }
         else if (heures == 6)
         {
             _wakeup_time();
@@ -775,8 +791,9 @@ public class TempleScript : MonoBehaviour
         {
             _spawn_ghost_building();
         }
-        else if (heures == 22 && workers_ready_to_worship!=0)
+        else if (heures == 22 && workers_ready_to_worship != 0)
         {
+
             StartCoroutine(worship_cycle());
             workers_ready_to_worship = 0;
         }

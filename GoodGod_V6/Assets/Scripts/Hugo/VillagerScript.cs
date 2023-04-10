@@ -981,9 +981,11 @@ public class VillagerScript : MonoBehaviour
 
         boost += 0.03f;
 
-        if(boost <= 1.03f)
+        if(tutoriel.tuto == 4)
+            tutoriel.StartCoroutine("UseSablierTuto");
+
+        if (boost <= 1.03f)
         {
-            Debug.Log("start");
             StartCoroutine(boost_effect());
         }
 ;

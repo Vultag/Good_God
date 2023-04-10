@@ -15,7 +15,7 @@ public class Tutoriel : MonoBehaviour
     private AudioClip[] _audioClips;
     public AudioSource TelAudio,BouleBAudio, BouleMAudio;
     public GameObject bouleB, bouleM, nuage, sablier, villageois, palmier, IPad, Ecran, Generique, Bureau, GeneriqueEcran, Tel;
-    public GameObject[] plaisir, Villagers;
+    public GameObject plaisir;
     public float timetuto, tuto, cas, fin;
     public Vector3 VNuage, VArbre, VVillageois, VSablier, VPlaisir;
     public static float EvNuage, EvCristaux, EvPlaisir;
@@ -34,6 +34,10 @@ public class Tutoriel : MonoBehaviour
     [SerializeField] AudioSource ambiance;
 
     [HideInInspector] public bool monologue_actif = false;
+    [HideInInspector] public bool TOO_GOOD = false;
+    [HideInInspector] public bool TOO_GOOD_in_progress = false;
+    [HideInInspector] public bool EVENT_in_progress = false;
+    [HideInInspector] public bool TUTO_NUIT_in_progress = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -82,7 +86,7 @@ public class Tutoriel : MonoBehaviour
 
     public void TutoCristaux()
     {
-      if(EvCristaux ==0) StartCoroutine(TutoEventCristaux());
+      if(EvCristaux == 0) StartCoroutine(TutoEventCristaux());
     }
     public  void TutorielNuage()
     {
@@ -128,7 +132,7 @@ public class Tutoriel : MonoBehaviour
         DisparitionBoules();
         if (fin == 0)
         {
-            tuto = 6;
+            tuto = 7;
             // Faire disparaitre après quelques secondes
             StopAllCoroutines();
             StartCoroutine(DisparitionTel(0));
@@ -162,9 +166,9 @@ public class Tutoriel : MonoBehaviour
         VArbre = palmier.transform.position;
         VArbre.y += 10;
     }
-    void PlaisirPos()
+    public void PlaisirPos()
     {
-        VPlaisir = plaisir[1].transform.position;
+        VPlaisir = plaisir.transform.position;
         VPlaisir.y += 10;
     }
     void VillageoisPos()
@@ -315,18 +319,22 @@ public IEnumerator TimerPickNuage(float time)
         while (BouleBAudio.isPlaying) yield return null;
         bouleB.GetComponent<Animator>().Play("flotte");  
         tuto = 4;
+
+        yield return new WaitForSeconds(2f);
+
     }
     public void SablierTuto()
     {
         //Debug.Log("TutoSablier");
-        if (tuto==4) StartCoroutine(PickSablierTuto());
+        if (tuto==4) StartCoroutine(UseSablierTuto());
 
     }
-    public IEnumerator PickSablierTuto()
+    public IEnumerator UseSablierTuto()
     {
+
         tuto = 5;
+
         // joueur doit prendre sablier
-        yield return new WaitForSeconds(2f);
         //jai retire la position du villageois ca risque de poser pb
 
         //boule va vers un villageois
@@ -350,20 +358,40 @@ public IEnumerator TimerPickNuage(float time)
         bouleB.GetComponent<Boules>().deplacement = false;
         bouleM.GetComponent<Animator>().Play("flotte");
 
+
+
         //si le joueur sexecute le villageois s'envole et oups c'est pas moi
-        yield return new WaitForSeconds(2f);
+        //yield return new WaitForSeconds(2f);
+
 
         BBParle();
         BouleBAudio.PlayOneShot(_audioClips[14]);
         while (BouleBAudio.isPlaying) yield return null;
-        //MODIFICATIONS la nuit tombe
-        villageois.gameObject.SetActive(false);
-        BMParle();
+
+
         BouleMAudio.PlayOneShot(_audioClips[15]);
         while (BouleMAudio.isPlaying) yield return null;
+
+        DisparitionBoules();
+
+    }
+
+    //JE L AI SEPARE POUR POUVOIR LE DECLENCHER LORSQUE LA NUIT TOMBE
+    public IEnumerator TUTO_nuit()
+    {
+        //MODIFICATIONS la nuit tombe
+
+        TUTO_NUIT_in_progress = true;
+
+        StopCoroutine("UseSablierTuto");
+
+        ApparitionBoules();
+
+        villageois.gameObject.SetActive(false);
+        BMParle();
         //plus ils en récolteront plus nous seront riches ! 
         //partie temple prieres 
-        BBParle();
+        //BBParle();
         BouleBAudio.PlayOneShot(_audioClips[16]);
         while (BouleBAudio.isPlaying) yield return null;
         BMParle();
@@ -390,12 +418,13 @@ public IEnumerator TimerPickNuage(float time)
         //boules disparaissent
         DisparitionBoules();
         tuto = 6;
+        TUTO_NUIT_in_progress = false;
     }
-
 
     //TUTORIEL EVENEMENT NUAGES
     public IEnumerator TutoEventNuages()
     {
+        EVENT_in_progress = true;
         ApparitionBoules();
         yield return new WaitForSeconds(2f);
         BouleBAudio.PlayOneShot(_audioClips[22]);
@@ -410,11 +439,15 @@ public IEnumerator TimerPickNuage(float time)
         // BouleBAudio.PlayOneShot(_audioClips[23]);
 
         DisparitionBoules();
+
+        EVENT_in_progress = false;
     }
 
     //TUTORIEL EVENEMENT CRISTAUX
     public IEnumerator TutoEventCristaux()
     {
+
+        EVENT_in_progress = true;
         ApparitionBoules();
         yield return new WaitForSeconds(2f);
         BBParle();
@@ -429,12 +462,19 @@ public IEnumerator TimerPickNuage(float time)
         BouleBAudio.PlayOneShot(_audioClips[23]);
 
         DisparitionBoules();
+
+        EVENT_in_progress = false;
     }
 
    
 
     public IEnumerator TropBonheur()
     {
+        TOO_GOOD = true;
+        TOO_GOOD_in_progress = true;
+        //le batiment plaisir doit avoir le tag plaisir
+        PlaisirPos();
+
         ApparitionBoules();
         yield return new WaitForSeconds(3f);
         BouleMAudio.PlayOneShot(_audioClips[26]);
@@ -443,8 +483,7 @@ public IEnumerator TimerPickNuage(float time)
         //boules se dirigent vers bat plaisir         
         bouleM.GetComponent<Boules>().deplacement = true;
         bouleB.GetComponent<Boules>().deplacement = true;
-        //le batiment plaisir doit avoir le tag plaisir
-        PlaisirPos();
+
         while (timetuto < 3f)
         {
             bouleM.transform.position = Vector3.MoveTowards(bouleM.transform.position, VPlaisir, 20 * Time.deltaTime);
@@ -463,7 +502,7 @@ public IEnumerator TimerPickNuage(float time)
         yield return new WaitForSecondsRealtime(5);
 
         //joueur detruit le bat ?
-        if (plaisir.Length <= 0)
+        if (!TempleScript.instance.disco_builed)
         {
             BMParle();
             BouleMAudio.PlayOneShot(_audioClips[29]);
@@ -474,6 +513,9 @@ public IEnumerator TimerPickNuage(float time)
         bouleM.GetComponent<Animator>().Play("flotte");
         DisparitionBoules();
         yield return null;
+
+        TOO_GOOD_in_progress = false;
+
     }
 
 
@@ -483,7 +525,7 @@ public IEnumerator TimerPickNuage(float time)
     {
         Time.timeScale = 1;
         fin = 1;
-        tuto = 6;
+        tuto = 7;
         bouleB.GetComponent<Boules>().deplacement = false;
         bouleM.GetComponent<Boules>().deplacement = false;
         BouleMAudio.Stop();
@@ -496,51 +538,55 @@ public IEnumerator TimerPickNuage(float time)
     //A FAIRE APPARAITRE A LA TOMBEE DE LA NUIT LE DERNIER JOUR 
     public IEnumerator DernierJour()
     {
-        tuto = 6;
+        tuto = 7;
         TempleScript.instance.gameObject.GetComponent<YogaScript>().activate_yoga_hand(0, false);
         Time.timeScale = 1;
-       // ApparitionBoules();
-       // if (TempleScript.village_terror < 50 && TempleScript.essence_num >= 100000) cas = 1;
-       // if (TempleScript.village_terror >= 50 && TempleScript.essence_num >= 100000) cas = 2;
-       // if (TempleScript.village_terror < 50 && TempleScript.essence_num < 100000) cas = 3;
-       // if (TempleScript.village_terror >= 50 && TempleScript.essence_num < 100000) cas = 4;
-       // BouleBAudio.Stop();
-       // BouleMAudio.Stop();
+        ApparitionBoules();
+        if (TempleScript.village_terror < 50 && TempleScript.essence_num >= 100000) cas = 1;
+        if (TempleScript.village_terror >= 50 && TempleScript.essence_num >= 100000) cas = 2;
+        if (TempleScript.village_terror < 50 && TempleScript.essence_num < 100000) cas = 3;
+        if (TempleScript.village_terror >= 50 && TempleScript.essence_num < 100000) cas = 4;
+        BouleBAudio.Stop();
+        BouleMAudio.Stop();
 
-       // //if dernier jour cas 1
-       // if (cas == 1)
-       // {
-       //     BouleBAudio.PlayOneShot(_audioClips[33]);
-       //     while (BouleBAudio.isPlaying) yield return null;
-       //     BouleMAudio.PlayOneShot(_audioClips[34]);
-       //     while (BouleMAudio.isPlaying) yield return null;
-       // }
-       // //if dernier jour cas 2
-       // if(cas == 2)
-       // {
-       //     BouleMAudio.PlayOneShot(_audioClips[35]);
-       //     while (BouleMAudio.isPlaying) yield return null;
-       //     BouleBAudio.PlayOneShot(_audioClips[36]);
-       //     while (BouleBAudio.isPlaying) yield return null;
-       //     BouleMAudio.PlayOneShot(_audioClips[37]);
-       //     while (BouleMAudio.isPlaying) yield return null;
-       // }
-       // //if dernier jour cas 3
-       // if (cas == 3)
-       // {
-       //     BouleBAudio.PlayOneShot(_audioClips[38]);
-       //     while (BouleBAudio.isPlaying) yield return null;
-       //     BouleMAudio.PlayOneShot(_audioClips[39]);
-       //     while (BouleMAudio.isPlaying) yield return null;
-       // }
-       // //if dernier jour cas 4
-       //if (cas == 4)
-       // {
-       //     BouleMAudio.PlayOneShot(_audioClips[40]);
-       //     while (BouleMAudio.isPlaying) yield return null;
-       //     BouleBAudio.PlayOneShot(_audioClips[41]);
-       //     while (BouleBAudio.isPlaying) yield return null;
-       // }
+        Debug.Log(cas);
+
+        //if dernier jour cas 1
+        if (cas == 1)
+        {
+            BouleBAudio.PlayOneShot(_audioClips[33]);
+            while (BouleBAudio.isPlaying) yield return null;
+            BouleMAudio.PlayOneShot(_audioClips[34]);
+            while (BouleMAudio.isPlaying) yield return null;
+        }
+        //if dernier jour cas 2
+        if (cas == 2)
+        {
+            BouleMAudio.PlayOneShot(_audioClips[35]);
+            while (BouleMAudio.isPlaying) yield return null;
+            BouleBAudio.PlayOneShot(_audioClips[36]);
+            while (BouleBAudio.isPlaying) yield return null;
+            BouleMAudio.PlayOneShot(_audioClips[37]);
+            while (BouleMAudio.isPlaying) yield return null;
+        }
+        //if dernier jour cas 3
+        if (cas == 3)
+        {
+            BouleBAudio.PlayOneShot(_audioClips[38]);
+            while (BouleBAudio.isPlaying) yield return null;
+            BouleMAudio.PlayOneShot(_audioClips[39]);
+            while (BouleMAudio.isPlaying) yield return null;
+        }
+        //if dernier jour cas 4
+        if (cas == 4)
+        {
+            BouleMAudio.PlayOneShot(_audioClips[40]);
+            while (BouleMAudio.isPlaying) yield return null;
+            BouleBAudio.PlayOneShot(_audioClips[41]);
+            while (BouleBAudio.isPlaying) yield return null;
+        }
+
+        DisparitionBoules();
 
         if (TempleScript.essence_num >= 100000) SetFinVictoire();
         else SetFinDefaite();
@@ -642,7 +688,7 @@ public IEnumerator TimerPickNuage(float time)
         TempleScript.instance.transform.parent.gameObject.SetActive(false);
         //Time.timeScale = 0;
         Tel.gameObject.SetActive(true);
-        Tel.gameObject.GetComponent<respawnObject>().Respawn();
+        Tel.GetComponent<Animator>().enabled = true;
         TelAudio.PlayOneShot(_audioClips[44]); //a remplacer par la sonnerie       
     }
 

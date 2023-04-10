@@ -27,8 +27,8 @@ public class Events_manager : MonoBehaviour
         randomNum1 = Random.Range(1, 10000);
         randomNum2 = Random.Range(1, 300);
         if(randomNum2 == 150 && tutoriel.fin == 0) UnCristal();
-        if (randomNum1 == EvCristaux && EventInProgress == false && tutoriel.tuto >=6 && tutoriel.fin == 0) EventCristaux();
-        else if (randomNum1 == EvNuages && EventInProgress == false && tutoriel.tuto >= 6 && tutoriel.fin == 0) EventNuages();   
+        if (randomNum1 == EvCristaux && EventInProgress == false && tutoriel.tuto >= 6 && tutoriel.fin == 0 && !tutoriel.TOO_GOOD_in_progress) EventCristaux();
+        else if (randomNum1 == EvNuages && EventInProgress == false && tutoriel.tuto >= 6 && tutoriel.fin == 0 && !tutoriel.TOO_GOOD_in_progress) EventNuages();   
       
     }
      
@@ -47,16 +47,20 @@ public class Events_manager : MonoBehaviour
     {
         StartCoroutine(AppUnCristal());
     }
-        void EventCristaux()
-    {
+    void EventCristaux()
+    {   
+
+        tutoriel.EVENT_in_progress = true;
         if (Tutoriel.EvCristaux == 0) tutoriel.TutoCristaux();
         Debug.Log("Event des cristaaaaaaux !!!");
         EventInProgress = true;
         StartCoroutine(ApparitionCristaux());
+
     }
 
     void EventNuages()
     {
+        tutoriel.EVENT_in_progress = true;
         if (Tutoriel.EvNuage == 0) tutoriel.TutorielNuage();
         foreach (GameObject n in NuageNoir)
         {
@@ -88,6 +92,7 @@ public class Events_manager : MonoBehaviour
         yield return new WaitForSeconds(12f);
         NbCristaux = 0;
         EventInProgress = false;
+        tutoriel.EVENT_in_progress = false;
         foreach (GameObject c in CristauxEvent) Destroy(c);
        if(Tutoriel.EvCristaux ==0) Tutoriel.EvCristaux = 1;
         yield return null;
@@ -112,6 +117,7 @@ public class Events_manager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         EventInProgress = false;
+        tutoriel.EVENT_in_progress = false;
         alpha = 0;
         foreach (GameObject n in NuageNoir)
         {
