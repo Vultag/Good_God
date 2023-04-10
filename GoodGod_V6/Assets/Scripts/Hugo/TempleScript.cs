@@ -112,6 +112,8 @@ public class TempleScript : MonoBehaviour
 
     public static TempleScript instance;
 
+    private bool is_FR; //a l arrache 
+
 
 
     private void Awake()
@@ -129,6 +131,15 @@ public class TempleScript : MonoBehaviour
     void Start()
     {
 
+        if (GameManager.instance.Language == "FR")
+        { 
+            is_FR = true; 
+        }
+        else
+        {
+            text_time.fontSize = 0.13f;
+            is_FR = false;
+        }
 
         time = minutes * 60 + heures * 3600;
         hour_tick = (int) heures;
@@ -702,8 +713,8 @@ public class TempleScript : MonoBehaviour
         time += Time.deltaTime * time_speed;
 
 
-        minutes = Mathf.FloorToInt(time/60);
-        heures = Mathf.FloorToInt(time/3600);
+        minutes = Mathf.FloorToInt(time / 60);
+        heures = Mathf.FloorToInt(time / 3600);
         journees = Mathf.FloorToInt(time / 86400);
 
 
@@ -715,7 +726,7 @@ public class TempleScript : MonoBehaviour
 
         if (minutes >= 60)
         {
-            minutes = minutes - (60*heures);
+            minutes = minutes - (60 * heures);
         }
 
         if (heures >= 24)
@@ -730,14 +741,15 @@ public class TempleScript : MonoBehaviour
         }
 
 
-        /*
-        if (heures < 12)
-            text_time.text = String.Format("{00:00} : {01:00}  AM", heures,minutes);
+        if (!is_FR)
+        { 
+            if (heures < 12)
+                text_time.text = String.Format("{00:00} : {01:00}  AM", heures, minutes);
+            else
+                text_time.text = String.Format("{00:00} : {01:00} PM", heures - 12, minutes);
+        }
         else
-            text_time.text = String.Format("{00:00} : {01:00} PM", heures-12, minutes);
-        */
-
-        text_time.text = String.Format("{00:00}:{01:00}", heures, minutes);
+            text_time.text = String.Format("{00:00}:{01:00}", heures, minutes);
 
 
 
