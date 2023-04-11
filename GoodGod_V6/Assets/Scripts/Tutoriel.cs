@@ -17,7 +17,7 @@ public class Tutoriel : MonoBehaviour
     public GameObject bouleB, bouleM, nuage, sablier, villageois, palmier, IPad, Ecran, Generique, Bureau, GeneriqueEcran, Tel;
     public GameObject plaisir;
     public float timetuto, tuto, cas, fin;
-    public Vector3 VNuage, VArbre, VVillageois, VSablier, VPlaisir;
+    public Vector3 VNuage, VArbre, VVillageois, VSablier, VPlaisir, VPlaisirB;
     public static float EvNuage, EvCristaux, EvPlaisir;
     [SerializeField] private SwitchSkybox refScriptSwitchSkybox;
     public TempleScript TempleScript;
@@ -170,6 +170,8 @@ public class Tutoriel : MonoBehaviour
     {
         VPlaisir = plaisir.transform.position;
         VPlaisir.y += 10;
+        VPlaisirB = VPlaisir;
+        VPlaisirB.x += 5;
     }
     void VillageoisPos()
     {
@@ -487,7 +489,7 @@ public IEnumerator TimerPickNuage(float time)
         while (timetuto < 3f)
         {
             bouleM.transform.position = Vector3.MoveTowards(bouleM.transform.position, VPlaisir, 20 * Time.deltaTime);
-            bouleB.transform.position = Vector3.MoveTowards(bouleB.transform.position, VPlaisir, 20 * Time.deltaTime);
+            bouleB.transform.position = Vector3.MoveTowards(bouleB.transform.position, VPlaisirB, 20 * Time.deltaTime);
             timetuto += 0.01f;
             yield return new WaitForSeconds(0.01f);
         }
