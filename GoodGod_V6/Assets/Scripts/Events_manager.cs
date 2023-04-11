@@ -16,6 +16,8 @@ public class Events_manager : MonoBehaviour
     //public Tutoriel Tutoriel;
 
     public Tutoriel tutoriel;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +65,7 @@ public class Events_manager : MonoBehaviour
         if (Tutoriel.EvCristaux == 0) tutoriel.TutoCristaux();
         Debug.Log("Event des cristaaaaaaux !!!");
         EventInProgress = true;
+        TempleScript.instance.GetComponent<YogaScript>().activate_yoga_hand(0, false);
         StartCoroutine(ApparitionCristaux());
 
     }
@@ -78,6 +81,7 @@ public class Events_manager : MonoBehaviour
           
             n.gameObject.SetActive(true);
             EventInProgress = true;
+            TempleScript.instance.GetComponent<YogaScript>().activate_yoga_hand(0, false);
             StartCoroutine(FadeNuage());
             if (Tutoriel.EvNuage == 0) Tutoriel.EvNuage = 1;
         }

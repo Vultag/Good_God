@@ -33,6 +33,9 @@ public class XR_interaction : MonoBehaviour
 
     [HideInInspector] public bool pause = false;
 
+
+    public GameObject temp_meteore;
+
     private void OnEnable()
     {
 
@@ -126,6 +129,8 @@ public class XR_interaction : MonoBehaviour
     {
         //Debug.Log(obj.ReadValue<Vector2>());
         Desk.move_desk(obj.ReadValue<Vector2>().x);
+        //Instantiate(temp_meteore,R_hand.transform.position,Quaternion.identity);
+
     }
 
 

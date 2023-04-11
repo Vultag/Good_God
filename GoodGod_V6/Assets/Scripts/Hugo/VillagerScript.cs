@@ -524,7 +524,7 @@ public class VillagerScript : MonoBehaviour
 
             }
             */
-            if (is_grabbed == false)
+            if (is_grabbed == false && NavMeshAgent.navMeshOwner != null)
                 NavMeshAgent.destination = target_ressource.transform.position;
 
             NavMeshAgent.updateRotation = true;
@@ -640,35 +640,57 @@ public class VillagerScript : MonoBehaviour
     {
 
         //GameObject cargo = this.transform.GetChild(0).GetComponent<VillagerDetectorScript>().carring_crystal;
-        if(target_ressource.GetComponent<Rigidbody>().angularDrag<0.1f)
+        if (target_ressource != null)
+        {
+            if (target_ressource.GetComponent<Rigidbody>().angularDrag < 0.1f)
+                Temple.GetComponent<TempleScript>().respawn_ressource();
+
+            if (target_ressource.tag == "Mineral_targeted")
+            {
+                Temple.GetComponent<TempleScript>().break_rock(target_ressource.transform, (int)target_ressource.GetComponent<Rigidbody>().mass - 1);
+                Temple.GetComponent<TempleScript>().break_rock(target_ressource.transform, (int)target_ressource.GetComponent<Rigidbody>().mass - 1);
+                Destroy(target_ressource.transform.parent.gameObject);
+            }
+
+            if (target_ressource.tag == "Tree_targeted")
+            {
+                target_ressource.GetComponent<Animator>().enabled = false;
+                target_ressource.GetComponent<Rigidbody>().isKinematic = false;
+                target_ressource.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+                Destroy(target_ressource.transform.parent.gameObject, 20f);
+
+            }
+
+
+            target_ressource = null;
+
+            is_looking_to_unload = true;
+
+            if (is_grabbed == false)
+                NavMeshAgent.destination = Temple.transform.position;
+
+            animator.Play("PNJ_rig|walk_with_cristal");
+            NavMeshAgent.updateRotation = true;
+        }
+        else
+        {
+
+            Debug.Log("bug");
+            Debug.Log(target_ressource);
+
             Temple.GetComponent<TempleScript>().respawn_ressource();
 
-        if (target_ressource.tag == "Mineral_targeted")
-        {
-            Temple.GetComponent<TempleScript>().break_rock(target_ressource.transform, (int)target_ressource.GetComponent<Rigidbody>().mass -1);
-            Temple.GetComponent<TempleScript>().break_rock(target_ressource.transform, (int)target_ressource.GetComponent<Rigidbody>().mass -1);
-            Destroy(target_ressource.transform.parent.gameObject);
-        }
+            target_ressource = null;
 
-        if (target_ressource.tag == "Tree_targeted")
-        {
-            target_ressource.GetComponent<Animator>().enabled = false;
-            target_ressource.GetComponent<Rigidbody>().isKinematic = false;
-            target_ressource.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
-            Destroy(target_ressource.transform.parent.gameObject, 20f);
+            is_looking_to_unload = true;
+
+            if (is_grabbed == false)
+                NavMeshAgent.destination = Temple.transform.position;
+
+            animator.Play("PNJ_rig|walk_with_cristal");
+            NavMeshAgent.updateRotation = true;
 
         }
-
-
-        target_ressource = null;
-
-        is_looking_to_unload = true;
-
-        if (is_grabbed == false)
-            NavMeshAgent.destination = Temple.transform.position;
-
-        animator.Play("PNJ_rig|walk_with_cristal");
-        NavMeshAgent.updateRotation = true;
 
     }
 
@@ -864,7 +886,8 @@ public class VillagerScript : MonoBehaviour
 
             Physics.IgnoreLayerCollision(9, 9, true);
 
-            this.NavMeshAgent.radius = 0.01f;
+            // ca cree des bug quand on les laches au sol si trop petit
+            this.NavMeshAgent.radius = 0.1f;
 
 
             targetGB.SetActive(false);
@@ -1118,10 +1141,12 @@ public class VillagerScript : MonoBehaviour
                 Temple.GetComponent<TempleScript>().working_workers.Remove(this.gameObject);
             }
 
+            Destroy(this.transform.parent.gameObject, 10f);
+
             this.GetComponent<VillagerScript>().enabled = false;
 
-
             rb.AddForce(0, 500f, 0);
+
 
 
         }

@@ -324,7 +324,7 @@ public class TempleScript : MonoBehaviour
 
         ratio = total_value / current_building.Count();
         //Debug.Log(total_value);
-        //Debug.Log(ratio);
+        //Debug.Log("new_build");
 
 
         if(Random.Range(1f,2f) > ratio || building_row_0_free.Union(building_row_1_free).Count() == 0)
@@ -333,6 +333,7 @@ public class TempleScript : MonoBehaviour
 
             if(small_building.Count() > medium_building.Count())
             {
+                //Debug.Log("new_medium");
 
                 GameObject building_to_remove = small_building[0];
 
@@ -346,6 +347,7 @@ public class TempleScript : MonoBehaviour
 
                 }
 
+                //Debug.Log(building_to_remove.GetComponent<HouseScript>().building_row);
 
                 new_upgraded_building.GetComponent<GhostHouseScript>().building_row = building_to_remove.GetComponent<HouseScript>().building_row;
                 new_upgraded_building.GetComponent<GhostHouseScript>().building_placement = building_to_remove.GetComponent<HouseScript>().building_placement;
@@ -375,6 +377,7 @@ public class TempleScript : MonoBehaviour
 
                 }
 
+                //Debug.Log(building_to_remove.GetComponent<HouseScript>().building_row);
 
                 new_upgraded_building.GetComponent<GhostHouseScript>().building_row = building_to_remove.GetComponent<HouseScript>().building_row;
                 new_upgraded_building.GetComponent<GhostHouseScript>().building_placement = building_to_remove.GetComponent<HouseScript>().building_placement;
@@ -500,7 +503,10 @@ public class TempleScript : MonoBehaviour
 
 
        Destroy(building.gameObject);
-        
+
+
+        NavSurface.BuildNavMesh();
+
     }
 
     private void _spawn_disco()
@@ -732,8 +738,9 @@ public class TempleScript : MonoBehaviour
         if (heures >= 24)
         {
             heures = heures - (24 * journees);
-            if (7 - journees == 0 && tutoriel.tuto == 6)
+            if (7 - journees <= 0 && tutoriel.tuto != 7)
             {
+                tutoriel.StopAllCoroutines();
                 tutoriel.tuto = 7;
                 StartCoroutine(tutoriel.DernierJour());
             }
@@ -755,7 +762,7 @@ public class TempleScript : MonoBehaviour
 
         //text_day.text = ("JOURS : "+ journees);
 
-        text_day.text = ((7-journees).ToString());
+        text_day.text = ((7-journees-1).ToString());
 
         //a mofidier (bug rotation soleil ici je pense)
         sun_light_GB.transform.rotation = Quaternion.Euler((time / 86400) * 360 - 90, 0, 0);

@@ -31,6 +31,8 @@ public class PauseScript : MonoBehaviour
         }
         */
     }
+    
+    //pause switch sur XR interraction
     /*
     public void ContinuerLaPartie()
     {

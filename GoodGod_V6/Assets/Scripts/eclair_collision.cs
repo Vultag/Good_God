@@ -104,7 +104,7 @@ public class eclair_collision : MonoBehaviour
             if (other.tag == "GhostBuilding")
             {
 
-                if (other.GetComponent<GhostHouseScript>().raising_height < 6)
+                if (other.GetComponent<GhostHouseScript>().raising_height < 7)
                 {
                     if (other.GetComponent<GhostHouseScript>().building_row == 0)
                     {
