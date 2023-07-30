@@ -13509,7 +13509,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31177,6 +31177,7 @@ MonoBehaviour:
   VVillageois: {x: 0, y: 0, z: 0}
   VSablier: {x: 0, y: 0, z: 0}
   VPlaisir: {x: 0, y: 0, z: 0}
+  VPlaisirB: {x: 0, y: 0, z: 0}
   refScriptSwitchSkybox: {fileID: 1860987656}
   TempleScript: {fileID: 8495303566441986494}
   Skybox: {fileID: 1860987656}

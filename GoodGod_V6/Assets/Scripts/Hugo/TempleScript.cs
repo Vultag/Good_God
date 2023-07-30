@@ -198,7 +198,7 @@ public class TempleScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
 
-            _spawn_ghost_building();
+            //_spawn_ghost_building();
 
             /*
 
@@ -738,7 +738,7 @@ public class TempleScript : MonoBehaviour
         if (heures >= 24)
         {
             heures = heures - (24 * journees);
-            if (7 - journees <= 0 && tutoriel.tuto != 7)
+            if (7 - journees <= 0 && tutoriel.fin == 0)
             {
                 tutoriel.StopAllCoroutines();
                 tutoriel.tuto = 7;
