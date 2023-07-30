@@ -27,9 +27,27 @@ public class Events_manager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        randomNum1 = Random.Range(1, 10000);
-        randomNum2 = Random.Range(1, 300);
+        randomNum1 = Random.Range(1, 10500);
+        randomNum2 = Random.Range(1, 500);
         if(randomNum2 == 150 && tutoriel.fin == 0) UnCristal();
+
+
+        if (EventInProgress == false && tutoriel.tuto >= 6 && tutoriel.fin == 0 && !tutoriel.TOO_GOOD_in_progress && TempleScript.instance.GetComponent<TempleScript>().journees > 0)
+        {
+            if (randomNum1 == EvCristaux)
+            {
+                tutoriel.EVENT_in_progress = true;
+                EventNuages();
+                //EventCristaux();
+            }
+            if (randomNum1 == EvNuages)
+            {
+                tutoriel.EVENT_in_progress = true;
+                EventNuages();
+            }
+
+        }
+        /*
         if (randomNum1 == EvCristaux && EventInProgress == false && tutoriel.tuto >= 6 && tutoriel.fin == 0 && !tutoriel.TOO_GOOD_in_progress)
         {
             tutoriel.EVENT_in_progress = true;
@@ -40,7 +58,7 @@ public class Events_manager : MonoBehaviour
             tutoriel.EVENT_in_progress = true;
             EventNuages();
         }
-
+        */
     }
      
     // Update is called once per frame
@@ -74,6 +92,7 @@ public class Events_manager : MonoBehaviour
     {
         tutoriel.EVENT_in_progress = true;
         if (Tutoriel.EvNuage == 0) tutoriel.TutorielNuage();
+        Debug.Log("Event des nuages !!!");
         foreach (GameObject n in NuageNoir)
         {
             n.transform.Rotate(0, Random.Range(100f, -100f), 0);

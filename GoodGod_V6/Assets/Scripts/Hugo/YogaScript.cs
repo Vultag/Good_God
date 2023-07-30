@@ -76,7 +76,7 @@ public class YogaScript : MonoBehaviour
         {
             //Debug.Log(RpinchAnimationAction.action.ReadValue<float>() + LpinchAnimationAction.action.ReadValue<float>());
 
-            Time.timeScale = (RpinchAnimationAction.action.ReadValue<float>() + LpinchAnimationAction.action.ReadValue<float>()) * 3f;
+            Time.timeScale = (RpinchAnimationAction.action.ReadValue<float>() + LpinchAnimationAction.action.ReadValue<float>()) * 12f; //3f
 
             yoga_particles.playbackSpeed = (RpinchAnimationAction.action.ReadValue<float>() + LpinchAnimationAction.action.ReadValue<float>());
 

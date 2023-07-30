@@ -110,9 +110,15 @@ public class inputs_tuto_detection : MonoBehaviour
 
         inputs_action.XRIRightHandInteraction.SelectValue.performed -= R_Trigger_performed;
         inputs_action.XRILeftHandInteraction.SelectValue.performed -= L_Trigger_performed;
+        inputs_action.XRIRightHandInteraction.SelectValue.canceled -= R_grip_deactivate;
+        inputs_action.XRILeftHandInteraction.SelectValue.canceled -= L_grip_deactivate;
 
         inputs_action.XRBUTTONS.X.performed -= Lance_eclair_performed_L;
         inputs_action.XRBUTTONS.A.performed -= Lance_eclair_performed_R;
+
+
+        inputs_action.XRIRightHandInteraction.Activate.canceled -= R_Trigger_deactivate;
+        inputs_action.XRILeftHandInteraction.Activate.canceled -= L_Trigger_deactivate;
 
 
         inputs_action.Disable();
@@ -285,6 +291,43 @@ public class inputs_tuto_detection : MonoBehaviour
 
     }
 
+    //test pour fix le bug de tuto medit
+    
+    private void R_grip_deactivate(CallbackContext obj)
+    {
+
+
+
+        Rtrigger = RpinchAnimationAction.action.ReadValue<float>();
+        Ltrigger = LpinchAnimationAction.action.ReadValue<float>();
+
+        Rgrab = RgripAnimationAction.action.ReadValue<float>();
+        Lgrab = LgripAnimationAction.action.ReadValue<float>();
+
+        if (Ltrigger > 0.9f && Rtrigger > 0.9f && Lgrab < 0.2f)
+        {
+            tuto_input_check("medite");
+        }
+
+    }
+    private void L_grip_deactivate(CallbackContext obj)
+    {
+
+
+
+        Rtrigger = RpinchAnimationAction.action.ReadValue<float>();
+        Ltrigger = LpinchAnimationAction.action.ReadValue<float>();
+
+        Rgrab = RgripAnimationAction.action.ReadValue<float>();
+        Lgrab = LgripAnimationAction.action.ReadValue<float>();
+
+        if (Ltrigger > 0.9f && Rtrigger > 0.9f && Rgrab < 0.2f)
+        {
+            tuto_input_check("medite");
+        }
+
+    }
+    
 
 
     public void tuto_input_check(string action)

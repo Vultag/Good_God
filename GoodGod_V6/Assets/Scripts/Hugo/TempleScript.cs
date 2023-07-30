@@ -113,7 +113,7 @@ public class TempleScript : MonoBehaviour
     public static TempleScript instance;
 
     private bool is_FR; //a l arrache 
-
+    private bool endgame_check = false;
 
 
     private void Awake()
@@ -738,8 +738,9 @@ public class TempleScript : MonoBehaviour
         if (heures >= 24)
         {
             heures = heures - (24 * journees);
-            if (7 - journees <= 0 && tutoriel.fin == 0)
+            if (7 - journees <= 0 && tutoriel.fin == 0 && endgame_check == false)
             {
+                endgame_check = true;
                 tutoriel.StopAllCoroutines();
                 tutoriel.tuto = 7;
                 StartCoroutine(tutoriel.DernierJour());

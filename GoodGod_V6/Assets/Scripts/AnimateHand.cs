@@ -197,6 +197,8 @@ public class AnimateHand : MonoBehaviour
     private void R_Trigger_performed(CallbackContext obj)
     {
 
+        //Debug.Log("grip");
+
         Rtrigger = RpinchAnimationAction.action.ReadValue<float>();
         if(RhandAnimator != null) RhandAnimator.SetFloat("Trigger", Rtrigger);
 

@@ -136,7 +136,10 @@ public class Tutoriel : MonoBehaviour
             // Faire disparaitre après quelques secondes
             StopAllCoroutines();
             StartCoroutine(DisparitionTel(0));
-            
+            EvCristaux = 1;
+            EvNuage = 1;
+            EvPlaisir = 1;
+
         }
 
     }

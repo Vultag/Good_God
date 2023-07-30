@@ -16224,12 +16224,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1417498955}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1418064397 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8692615157778240447, guid: 850f83e0067ff3647a1889cd58bb221a,
-    type: 3}
-  m_PrefabInstance: {fileID: 4376925671355843088}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1431635631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28361,13 +28355,11 @@ MonoBehaviour:
   NuageNoir:
   - {fileID: 1139034667}
   - {fileID: 707833416}
-  - {fileID: 2141685951}
   - {fileID: 1196913904}
   eclairs:
   - {fileID: 591011311}
   - {fileID: 1124923603}
   - {fileID: 1372177169}
-  - {fileID: 1418064397}
   CristauxEvent: []
   NuageNoirMat: {fileID: 2100000, guid: 498af57ef1759a24693b5c0dfe192d65, type: 2}
   RenderNuage: {fileID: 131375934}
@@ -33193,12 +33185,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3080814966507116562, guid: 5c3ec467c814fde41ba350e347bf42af,
     type: 3}
   m_PrefabInstance: {fileID: 2138408030}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2141685951 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3670742534653099798, guid: 850f83e0067ff3647a1889cd58bb221a,
-    type: 3}
-  m_PrefabInstance: {fileID: 4376925671355843088}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &102295066082512808
 Transform:
@@ -66019,6 +66005,16 @@ PrefabInstance:
       propertyPath: BoomAudio
       value: 
       objectReference: {fileID: 1702374378}
+    - target: {fileID: 3670742534966637458, guid: 850f83e0067ff3647a1889cd58bb221a,
+        type: 3}
+      propertyPath: startDelay.scalar
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670742535026330965, guid: 850f83e0067ff3647a1889cd58bb221a,
+        type: 3}
+      propertyPath: startDelay.scalar
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3670742535468128978, guid: 850f83e0067ff3647a1889cd58bb221a,
         type: 3}
       propertyPath: temple
@@ -66031,8 +66027,18 @@ PrefabInstance:
       objectReference: {fileID: 1702374378}
     - target: {fileID: 3670742535579026245, guid: 850f83e0067ff3647a1889cd58bb221a,
         type: 3}
+      propertyPath: m_Name
+      value: Nuage_prefab 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670742535579026245, guid: 850f83e0067ff3647a1889cd58bb221a,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670742535904238061, guid: 850f83e0067ff3647a1889cd58bb221a,
+        type: 3}
+      propertyPath: m_Name
+      value: Nuage_prefab 2
       objectReference: {fileID: 0}
     - target: {fileID: 3670742536364342313, guid: 850f83e0067ff3647a1889cd58bb221a,
         type: 3}
@@ -66044,6 +66050,11 @@ PrefabInstance:
       propertyPath: BoomAudio
       value: 
       objectReference: {fileID: 1702374378}
+    - target: {fileID: 3670742536454838269, guid: 850f83e0067ff3647a1889cd58bb221a,
+        type: 3}
+      propertyPath: startDelay.scalar
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4081683079172634077, guid: 850f83e0067ff3647a1889cd58bb221a,
         type: 3}
       propertyPath: m_InteractionManager
@@ -66136,6 +66147,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8692615156837691374, guid: 850f83e0067ff3647a1889cd58bb221a,
         type: 3}
+      propertyPath: startDelay.scalar
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692615156837691374, guid: 850f83e0067ff3647a1889cd58bb221a,
+        type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
       value: 10
       objectReference: {fileID: 0}
@@ -66143,6 +66159,11 @@ PrefabInstance:
         type: 3}
       propertyPath: simulationSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692615156910231849, guid: 850f83e0067ff3647a1889cd58bb221a,
+        type: 3}
+      propertyPath: startDelay.scalar
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8692615156910231849, guid: 850f83e0067ff3647a1889cd58bb221a,
         type: 3}
@@ -66153,6 +66174,11 @@ PrefabInstance:
         type: 3}
       propertyPath: simulationSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692615157778240445, guid: 850f83e0067ff3647a1889cd58bb221a,
+        type: 3}
+      propertyPath: startDelay.scalar
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8692615157778240445, guid: 850f83e0067ff3647a1889cd58bb221a,
         type: 3}
@@ -66163,6 +66189,11 @@ PrefabInstance:
         type: 3}
       propertyPath: simulationSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692615158660035910, guid: 850f83e0067ff3647a1889cd58bb221a,
+        type: 3}
+      propertyPath: startDelay.scalar
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8692615158660035910, guid: 850f83e0067ff3647a1889cd58bb221a,
         type: 3}
@@ -66172,7 +66203,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7579547150895383819, guid: 850f83e0067ff3647a1889cd58bb221a, type: 3}
     - {fileID: 9155178929404801650, guid: 850f83e0067ff3647a1889cd58bb221a, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3670742534653099798, guid: 850f83e0067ff3647a1889cd58bb221a, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3670742535579026244, guid: 850f83e0067ff3647a1889cd58bb221a,
         type: 3}
