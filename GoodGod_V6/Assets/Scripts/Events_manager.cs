@@ -37,8 +37,7 @@ public class Events_manager : MonoBehaviour
             if (randomNum1 == EvCristaux)
             {
                 tutoriel.EVENT_in_progress = true;
-                EventNuages();
-                //EventCristaux();
+                EventCristaux();
             }
             if (randomNum1 == EvNuages)
             {
