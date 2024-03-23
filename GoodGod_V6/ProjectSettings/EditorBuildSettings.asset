@@ -16,6 +16,8 @@ EditorBuildSettings:
       type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: f7289f2b4be02134bb54b5b672737102,
       type: 2}
+    Unity.XR.PXR.Settings: {fileID: 11400000, guid: d1740e2673a58c04190d0869a315cdc2,
+      type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba,
       type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 9bec1ce6a03ccba4b9a8215241b32e63,
